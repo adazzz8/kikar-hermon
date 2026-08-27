@@ -395,10 +395,20 @@ p{margin:0}
 .deep-nav{position:absolute;bottom:0;right:0;left:0;display:flex;justify-content:space-between;
   align-items:center;gap:12px;padding:14px 22px;pointer-events:none;
   background:linear-gradient(0deg,#0F0F23 58%,transparent)}
-.deep-nav button{pointer-events:auto;border:1px solid var(--line2);background:linear-gradient(160deg,#232350,#1A1A3E);border-radius:999px;
-  padding:11px 22px;font-family:"Heebo",sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(--text);transition:.18s}
-.deep-nav button:hover:not(:disabled){background:linear-gradient(135deg,rgb(var(--a1)),rgb(var(--a2)));color:#FFFFFF;border-color:transparent}
-.deep-nav button:disabled{opacity:.28;cursor:default}
+.deep-nav button{
+  pointer-events:auto;border:1px solid transparent;border-radius:999px;
+  background:linear-gradient(135deg,rgb(var(--a1)),rgb(var(--a2)));
+  padding:13px 30px;font-family:"Heebo",sans-serif;font-weight:800;font-size:15px;
+  cursor:pointer;color:#FFFFFF;transition:.18s ease;
+  box-shadow:0 10px 30px -10px rgba(var(--a1),.80);
+}
+.deep-nav button:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.10);
+  box-shadow:0 16px 38px -10px rgba(var(--a1),.95)}
+.deep-nav button:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
+.deep-nav button:disabled{
+  background:rgba(255,255,255,.05);color:var(--dim);border-color:var(--line);
+  box-shadow:none;cursor:default;
+}
 .deep-count{font-size:12.5px;color:var(--dim);font-family:"Heebo",sans-serif}
 
 /* רכיבים בהעמקה */
@@ -808,7 +818,58 @@ p{margin:0}
   </div>
 </section>
 
-<!-- ==================== 5. השלד ==================== -->
+<!-- ==================== 5. מודל עסקי ==================== -->
+<section class="screen acc-green" id="business">
+  <div class="wrap">
+    <div class="eyebrow">מודל עסקי</div>
+    <h2 class="h2">Freemium: הרוב חינם, הרווח מהנלווה</h2>
+    <p class="lead">קודם כל הערך: מקום לשבת ולעבוד בלי לשלם, תוכן שלומדים ממנו, ואנשי מקצוע, קולגות ואנשים מעניינים שפוגשים במקום. זה מה שממלא את המתחם, וממקום מלא מגיעות ההכנסות.</p>
+
+    <div class="freemium">
+      <div class="fm-visual">
+        <div class="fm-tier fm-free">
+          <div class="fm-head"><span class="fm-badge">חינם</span><b>הרוב המוחלט של האנשים</b></div>
+          <div class="fm-items">
+            <span>כניסה לכיכר ולרחבה</span><span>שולחן עבודה פתוח</span><span>רוב ההרצאות והסדנאות</span>
+            <span>שעות קבלה עם אנשי מקצוע</span><span>אירועי קהילה ותרבות</span><span>כרטיס קהילה</span>
+          </div>
+        </div>
+        <div class="fm-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>נוצרת תנועה יומיומית</b></div>
+        <div class="fm-tier fm-low">
+          <div class="fm-head"><span class="fm-badge">עלות נמוכה</span><b>כמעט כל מי שנמצא במקום</b></div>
+          <div class="fm-items">
+            <span>קפה ב 5 שקלים</span><span>אוכל קל וסנדוויצ׳ים</span><span>בירה ויין בערב</span>
+          </div>
+        </div>
+        <div class="fm-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>חלק קטן הופך למשתמש כבד</b></div>
+        <div class="fm-tier fm-paid">
+          <div class="fm-head"><span class="fm-badge">בתשלום</span><b>מיעוט, ושם נמצא הרווח</b></div>
+          <div class="fm-items">
+            <span>סדנאות עומק והכשרות</span><span>קורסים ותוכניות בהאב</span><span>עמדות עבודה קבועות</span>
+            <span>משרדים וחדרי ישיבות</span><span>חבילות לקהילות ולארגונים</span><span>אירועים פרטיים</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fm-side">
+        <div class="fm-note">
+          <b>אותו עיקרון של חברות התעופה</b>
+          <p>הכרטיס עצמו זול או כמעט בעלות. הרווח מגיע מהמושב, מהמזוודה, מהשדרוג ומהביטוח. אותו דבר כאן: הכניסה, השולחן ורוב התוכן לא עולים כסף, והרווח מגיע ממה שנלווה אליהם.</p>
+        </div>
+        <div class="fm-note">
+          <b>למה זה עובד דווקא כאן</b>
+          <p>התוכן החינמי כמעט לא עולה לנו, כי הוא מגיע בברטר מול ספקים. במקום להוציא כסף על תוכן, אנחנו מוציאים אותו על תפעול, ומקבלים בתמורה מקום מלא כל יום.</p>
+        </div>
+        <div class="fm-note">
+          <b>מה מודדים</b>
+          <p>לא כמה אנשים שילמו על הכניסה, אלא כמה אנשים הגיעו, כמה מהם חזרו, כמה מהם קנו משהו, וכמה מהם הפכו לאורך הזמן למשתמשים כבדים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. השלד ==================== -->
 <section class="screen acc-cyan" id="skeleton">
   <div class="wrap">
     <div class="eyebrow">השלד</div>
@@ -884,57 +945,6 @@ p{margin:0}
   </div>
 </section>
 
-<!-- ==================== 6. מודל עסקי ==================== -->
-<section class="screen acc-green" id="business">
-  <div class="wrap">
-    <div class="eyebrow">מודל עסקי</div>
-    <h2 class="h2">Freemium: הרוב חינם, הרווח מהנלווה</h2>
-    <p class="lead">קודם כל הערך: מקום לשבת ולעבוד בלי לשלם, תוכן שלומדים ממנו, ואנשי מקצוע, קולגות ואנשים מעניינים שפוגשים במקום. זה מה שממלא את המתחם, וממקום מלא מגיעות ההכנסות.</p>
-
-    <div class="freemium">
-      <div class="fm-visual">
-        <div class="fm-tier fm-free">
-          <div class="fm-head"><span class="fm-badge">חינם</span><b>הרוב המוחלט של האנשים</b></div>
-          <div class="fm-items">
-            <span>כניסה לכיכר ולרחבה</span><span>שולחן עבודה פתוח</span><span>רוב ההרצאות והסדנאות</span>
-            <span>שעות קבלה עם אנשי מקצוע</span><span>אירועי קהילה ותרבות</span><span>כרטיס קהילה</span>
-          </div>
-        </div>
-        <div class="fm-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>נוצרת תנועה יומיומית</b></div>
-        <div class="fm-tier fm-low">
-          <div class="fm-head"><span class="fm-badge">עלות נמוכה</span><b>כמעט כל מי שנמצא במקום</b></div>
-          <div class="fm-items">
-            <span>קפה ב 5 שקלים</span><span>אוכל קל וסנדוויצ׳ים</span><span>בירה ויין בערב</span>
-          </div>
-        </div>
-        <div class="fm-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>חלק קטן הופך למשתמש כבד</b></div>
-        <div class="fm-tier fm-paid">
-          <div class="fm-head"><span class="fm-badge">בתשלום</span><b>מיעוט, ושם נמצא הרווח</b></div>
-          <div class="fm-items">
-            <span>סדנאות עומק והכשרות</span><span>קורסים ותוכניות בהאב</span><span>עמדות עבודה קבועות</span>
-            <span>משרדים וחדרי ישיבות</span><span>חבילות לקהילות ולארגונים</span><span>אירועים פרטיים</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fm-side">
-        <div class="fm-note">
-          <b>אותו עיקרון של חברות התעופה</b>
-          <p>הכרטיס עצמו זול או כמעט בעלות. הרווח מגיע מהמושב, מהמזוודה, מהשדרוג ומהביטוח. אותו דבר כאן: הכניסה, השולחן ורוב התוכן לא עולים כסף, והרווח מגיע ממה שנלווה אליהם.</p>
-        </div>
-        <div class="fm-note">
-          <b>למה זה עובד דווקא כאן</b>
-          <p>התוכן החינמי כמעט לא עולה לנו, כי הוא מגיע בברטר מול ספקים. במקום להוציא כסף על תוכן, אנחנו מוציאים אותו על תפעול, ומקבלים בתמורה מקום מלא כל יום.</p>
-        </div>
-        <div class="fm-note">
-          <b>מה מודדים</b>
-          <p>לא כמה אנשים שילמו על הכניסה, אלא כמה אנשים הגיעו, כמה מהם חזרו, כמה מהם קנו משהו, וכמה מהם הפכו לאורך הזמן למשתמשים כבדים.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==================== 7. כרטיס קהילה ואפליקציה ==================== -->
 <section class="screen auto acc-pink" id="membership">
   <div class="wrap">
@@ -996,7 +1006,7 @@ p{margin:0}
     <div class="eyebrow" style="text-align:center">התוצאה</div>
     <h2>מקום שמקומיים חוזרים אליו, <em>ואנשים מבחוץ רואים בו חיים</em></h2>
     <p>לא מרכז חדשנות, לא פרויקט נדל״ן, ולא עוד בית קפה. תשתית חיים מקומית לכלל התושבים, לסטודנטים ולאנשים מהסביבה, שמתחילה קטן, מוכיחה את עצמה תוך 90 יום, ומתרחבת משם.</p>
-    <button class="btn lg" data-open-deep>להעמקה, 16 פרקים</button>
+    <button class="btn lg" data-open-deep>להעמקה, 17 פרקים</button>
   </div>
   <div class="wrap">
     <hr class="hair" style="margin-top:70px">
@@ -1121,8 +1131,82 @@ p{margin:0}
       <div class="kicker">המטרה אינה למלא לוח אירועים, אלא לייצר סיבות קבועות לחזור.</div>
     </section>
 
+    <section class="slide acc-pink">
+      <div class="slide-n">05 / כרטיס חבר ואפליקציה</div>
+      <h2>הכלי שהופך מבקר מזדמן לחבר קהילה</h2>
+      <p class="sublead">בלי זה אנחנו מקום שאנשים עוברים בו. עם זה אנחנו יודעים מי הקהילה שלנו, מה מעניין אותה, ומי חזר בשבוע שעבר. זה גם מה שנותן לאנשים סיבה מוחשית להירשם.</p>
+
+      <div class="two">
+        <div class="panel hot">
+          <h4>כרטיס החבר, מה החבר מקבל</h4>
+          <ul class="plist">
+            <li><b>הנחה קבועה</b> בקפה, בבר ובאוכל</li>
+            <li><b>מחיר מוזל</b> לסדנאות, להכשרות ולאירועים בתשלום</li>
+            <li><b>הטבות אצל עסקים שותפים</b> בעיר ובאזור</li>
+            <li><b>עדיפות בהרשמה</b> לאירועים עם מקומות מוגבלים</li>
+            <li><b>גישה לערבים סגורים</b> של הקהילה</li>
+            <li><b>הכרטיס בטלפון</b>, בלי לשלוף כלום בקופה</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>האפליקציה, מה היא עושה</h4>
+          <ul class="plist">
+            <li><b>לוח אירועים חי:</b> מה קורה היום, השבוע והחודש</li>
+            <li><b>הרשמה בשתי לחיצות</b> לכל אירוע, בלי טפסים ובלי הגבלה על כמות</li>
+            <li><b>מעקב אחרי אירועים:</b> למה נרשמתי, מה עבר, מה עוד פתוח</li>
+            <li><b>מעקב אחרי קהילות:</b> להצטרף לקהילה ולקבל רק את מה שרלוונטי לה</li>
+            <li><b>הודעות ותזכורות:</b> תזכורת לפני אירוע, עדכון על ביטול, הזמנה אישית</li>
+            <li><b>סינון לפי תחומי עניין:</b> קריירה, AI, תרבות, עסקים, מוזיקה</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="mt-l">מה אנחנו מקבלים מזה</h3>
+      <div class="three mt">
+        <div class="panel">
+          <h4>דאטה שאפשר לפעול לפיה</h4>
+          <ul class="plist">
+            <li>כמה נרשמו וכמה באמת הגיעו</li>
+            <li>מי חזר יותר מפעם אחת</li>
+            <li>אילו פורמטים מחזירים אנשים</li>
+            <li>אילו קהילות מביאות קהל בפועל</li>
+            <li>אילו ספקים נתנו ערך אמיתי</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>ערוץ תקשורת ישיר</h4>
+          <ul class="plist">
+            <li>הודעה לכל מי שנרשם לאירוע</li>
+            <li>פנייה ממוקדת לפי תחום עניין</li>
+            <li>הזמנה אישית לקהילה מתאימה</li>
+            <li>בלי להיות תלויים באלגוריתם של רשת חברתית</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>נכס מול שותפים</h4>
+          <ul class="plist">
+            <li>מספר חברים אמיתי מול העירייה וגופים אזוריים</li>
+            <li>קהל מדויק שאפשר להציע לספק</li>
+            <li>הוכחה שהמקום מייצר חזרתיות ולא רק ביקורים</li>
+            <li>בסיס למועדון הטבות עם עסקים מקומיים</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kicker">הטכנולוגיה היא לא הסיפור. הקשר עם האנשים הוא הסיפור, והכלי הזה רק שומר עליו.</div>
+
+      <h3 class="mt-l">איך מתחילים, בלי לבנות סטארטאפ</h3>
+      <ul class="steps">
+        <li><em>01</em><div><b>דף הרשמה פשוט</b><span>שם, טלפון, אימייל, תחומי עניין. זה הכל.</span></div></li>
+        <li><em>02</em><div><b>לוח אירועים והרשמה</b><span>כרטיס אירוע קצר עם כפתור הרשמה אחד.</span></div></li>
+        <li><em>03</em><div><b>כרטיס חבר בסיסי</b><span>אפילו מספר חבר ורשימת הטבות. מספיק כדי להתחיל.</span></div></li>
+        <li><em>04</em><div><b>הודעות בוואטסאפ או במייל</b><span>תזכורות ועדכונים, לפי תחומי עניין.</span></div></li>
+        <li><em>05</em><div><b>אפליקציה</b><span>רק אחרי שרואים שאנשים באמת חוזרים ושיש מה לנהל.</span></div></li>
+      </ul>
+    </section>
+
     <section class="slide acc-indigo">
-      <div class="slide-n">05 / הבעיה</div>
+      <div class="slide-n">06 / הבעיה</div>
       <h2>חסר מוקד חיים, לא חסרים אירועים</h2>
       <p class="sublead">אחרי המלחמה בצפון, העיר צריכה יותר מתוכניות וקמפיינים. כדי שאנשים ירצו להישאר, לחזור או לעבור, הם צריכים לראות מקום שכבר קורה בו משהו.</p>
       <div class="two">
@@ -1143,8 +1227,8 @@ p{margin:0}
       <div class="kicker solid">אנשים לא עוברים לעיר בגלל מצגת. הם עוברים כשהם מצליחים לדמיין חיים.</div>
     </section>
 
-    <section class="slide acc-pink">
-      <div class="slide-n">06 / הפתרון</div>
+    <section class="slide acc-cyan">
+      <div class="slide-n">07 / הפתרון</div>
       <h2>בית אחד לקפה, עבודה, קהילות ותוכן</h2>
       <p class="sublead">כל הרכיבים כבר קיימים באזור בנפרד. אף אחד לא חיבר אותם למקום אחד.</p>
       <div class="three">
@@ -1156,8 +1240,8 @@ p{margin:0}
       <div class="slide-img" id="img-cafe"><span></span></div>
     </section>
 
-    <section class="slide acc-cyan">
-      <div class="slide-n">07 / שני המתחמים</div>
+    <section class="slide acc-violet">
+      <div class="slide-n">08 / שני המתחמים</div>
       <h2>כיכר אחת, שני תפקידים</h2>
       <p class="sublead">לא שני מקומות נפרדים. מערכת אחת שאפשר לנוע בתוכה במהלך ערב אחד.</p>
       <div class="two">
@@ -1190,8 +1274,8 @@ p{margin:0}
       </div>
     </section>
 
-    <section class="slide acc-violet">
-      <div class="slide-n">08 / למה אנשים יבואו</div>
+    <section class="slide acc-teal">
+      <div class="slide-n">09 / למה אנשים יבואו</div>
       <h2>כי יוצאים משם עם משהו ביד</h2>
       <p class="sublead">לא אירועים. ערך שאפשר להצביע עליו.</p>
       <div class="matrix">
@@ -1208,8 +1292,8 @@ p{margin:0}
       </div>
     </section>
 
-    <section class="slide acc-teal">
-      <div class="slide-n">09 / למה קהילות יבואו</div>
+    <section class="slide acc-blue">
+      <div class="slide-n">10 / למה קהילות יבואו</div>
       <h2>לא משכירים חלל, נותנים בית</h2>
       <p class="sublead">ההבדל בין רוצים לשכור אצלנו מקום, לבין רוצים בית קבוע לפעילות שלכם.</p>
       <div class="two">
@@ -1225,8 +1309,8 @@ p{margin:0}
       <div class="kicker">הקהילה מקבלת בית. הכיכר מקבלת קהל אמיתי. העיר מקבלת חיים.</div>
     </section>
 
-    <section class="slide acc-blue">
-      <div class="slide-n">10 / מודל עסקי</div>
+    <section class="slide acc-green">
+      <div class="slide-n">11 / מודל עסקי</div>
       <h2>Freemium, ומעליו שמונה שכבות הכנסה</h2>
       <p class="sublead">הבסיס הוא מודל Freemium: הכניסה, השולחן ורוב התוכן חינם, והרווח מגיע ממה שנלווה אליהם. אותו עיקרון שחברות התעופה עובדות לפיו, וגם Spotify, Dropbox ורוב האפליקציות שאנחנו משתמשים בהן.</p>
 
@@ -1279,7 +1363,7 @@ p{margin:0}
     </section>
 
     <section class="slide acc-indigo">
-      <div class="slide-n">11 / שותפים</div>
+      <div class="slide-n">12 / שותפים</div>
       <h2>מי יכול להיות חלק מזה</h2>
       <p class="sublead">אף אחד מהם לא נדרש לוותר על בעלות או על טריטוריה. הם מקבלים מקום שבו הקהל שלהם כבר נמצא.</p>
       <div class="two">
@@ -1294,7 +1378,7 @@ p{margin:0}
     </section>
 
     <section class="slide acc-emerald">
-      <div class="slide-n">12 / Win Win</div>
+      <div class="slide-n">13 / Win Win</div>
       <h2>לכל צד אינטרס משלו</h2>
       <p class="sublead">כיכר חרמון צריכה להיות שווייץ מקומית: מקום ניטרלי שכל גוף יכול לעבוד איתו.</p>
       <div class="matrix">
@@ -1310,7 +1394,7 @@ p{margin:0}
     </section>
 
     <section class="slide acc-purple">
-      <div class="slide-n">13 / 90 יום</div>
+      <div class="slide-n">14 / 90 יום</div>
       <h2>Proof of Life: להוכיח שיש חיים</h2>
       <p class="sublead">מתחילים קטן, מהר ומדיד. לא ממתגים יותר מדי לפני שיש חיים.</p>
       <ul class="steps">
@@ -1327,7 +1411,7 @@ p{margin:0}
     </section>
 
     <section class="slide acc-pink">
-      <div class="slide-n">14 / שנה ראשונה</div>
+      <div class="slide-n">15 / שנה ראשונה</div>
       <h2>Operating System: להפוך את זה למערכת</h2>
       <p class="sublead">לא כל שבוע המצאה מחדש. פורמטים חוזרים, קהילות קבועות וספקים שחוזרים.</p>
       <div class="two">
@@ -1355,7 +1439,7 @@ p{margin:0}
     </section>
 
     <section class="slide acc-teal">
-      <div class="slide-n">15 / תמונת הצלחה</div>
+      <div class="slide-n">16 / תמונת הצלחה</div>
       <h2>איך זה נראה כשזה עובד</h2>
       <p class="sublead">לא ביום הפתיחה. בשלישי רגיל של החודש השביעי.</p>
       <div class="panel hot">
@@ -1372,8 +1456,8 @@ p{margin:0}
       <div class="slide-img" id="img-success"><span></span></div>
     </section>
 
-    <section class="slide acc-green">
-      <div class="slide-n">16 / החלטות</div>
+    <section class="slide acc-violet">
+      <div class="slide-n">17 / החלטות</div>
       <h2>שש החלטות שפותחות את השלב הראשון</h2>
       <p class="sublead">אף אחת מהן לא דורשת את כל התשובות. כולן דורשות כיוון.</p>
       <div class="decide">
@@ -1511,7 +1595,7 @@ var prevBtn = document.getElementById('prevBtn');
 var nextBtn = document.getElementById('nextBtn');
 var current = 0;
 
-var titles = ['החזון','תפריט תוכן','למה ספקים יבואו','שבוע לדוגמה','הבעיה','הפתרון','שני המתחמים','למה אנשים יבואו','למה קהילות יבואו','מודל עסקי','שותפים','Win Win','90 יום','שנה ראשונה','תמונת הצלחה','החלטות'];
+var titles = ['החזון','תפריט תוכן','למה ספקים יבואו','שבוע לדוגמה','כרטיס חבר ואפליקציה','הבעיה','הפתרון','שני המתחמים','למה אנשים יבואו','למה קהילות יבואו','מודל עסקי','שותפים','Win Win','90 יום','שנה ראשונה','תמונת הצלחה','החלטות'];
 
 titles.forEach(function(t, i){
   var b = document.createElement('button');
@@ -1532,6 +1616,9 @@ function go(i){
   prevBtn.disabled = (i === 0);
   nextBtn.disabled = (i === slides.length - 1);
   stage.scrollTop = 0;
+  /* צובע את סרגל ההעמקה, פס ההתקדמות והכפתורים בגוון הפרק הנוכחי */
+  var acc = (slides[i].className.match(/acc-[a-z]+/) || ['acc-purple'])[0];
+  deep.className = deep.className.replace(/\s*acc-[a-z]+/g, '') + ' ' + acc;
   if(chipEls[i]) chipEls[i].scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
   history.replaceState(null, '', '#deep-' + (i+1));
 }
