@@ -1,1 +1,247 @@
-<!doctype html><html lang="he" dir="rtl"><body>proposal placeholder</body></html>
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>כיכר חרמון · הצעת הפעלה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 12mm 12mm 14mm; }
+:root{
+  --a1:139,92,246; --a2:236,72,153;
+  --bg:#101028; --text:#F2F3FF; --muted:#A7AED4; --dim:#7A82B0;
+  --line:rgba(255,255,255,.12); --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  color:var(--text); background:#101028;
+  font-family:"Assistant","Heebo",Arial,sans-serif;
+  font-size:13.5px; line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  print-color-adjust:exact; -webkit-print-color-adjust:exact;
+}
+h1,h2,h3,h4{font-family:"Heebo",sans-serif;margin:0;letter-spacing:-.03em;line-height:1.15}
+p{margin:0}
+.page{
+  width:186mm; margin:0 auto; padding:6px 0 10px;
+}
+.hero{
+  background:linear-gradient(135deg,rgba(var(--a1),.28),rgba(var(--a2),.12) 60%,transparent);
+  border:1px solid rgba(var(--a1),.35); border-radius:18px; padding:18px 20px 16px; margin-bottom:12px;
+}
+.tag{
+  display:inline-block; font-family:"Heebo",sans-serif; font-size:10.5px; font-weight:700;
+  letter-spacing:.08em; color:rgb(var(--a1));
+  border:1px solid rgba(var(--a1),.35); background:rgba(var(--a1),.1);
+  padding:4px 10px; border-radius:999px; margin-bottom:8px;
+}
+.hero h1{font-size:34px; font-weight:900}
+.hero h1 span{
+  background:linear-gradient(120deg,#fff,rgb(var(--a1)) 55%,rgb(var(--a2)));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero .lead{color:var(--muted); margin-top:6px; max-width:62ch; font-size:14.5px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chips span{
+  font-family:"Heebo",sans-serif; font-size:11.5px; font-weight:700;
+  border:1px solid var(--line); border-radius:999px; padding:5px 10px;
+  background:rgba(255,255,255,.04)
+}
+.chips em{font-style:normal; color:rgb(var(--a1))}
+.sec{margin:12px 0 4px}
+.eyebrow{font-family:"Heebo",sans-serif; font-size:10px; letter-spacing:.18em; font-weight:800; color:rgb(var(--a2)); margin-bottom:4px}
+.h2{font-size:20px; margin-bottom:6px}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+.panel{
+  background:rgba(255,255,255,.035); border:1px solid var(--line);
+  border-radius:var(--r); padding:11px 12px;
+}
+.panel.hot{background:linear-gradient(160deg,rgba(var(--a1),.26),rgba(var(--a2),.1)); border-color:rgba(var(--a1),.4)}
+.panel.yes{border-color:rgba(34,197,94,.38)}
+.panel.no{border-color:rgba(236,72,153,.32)}
+.panel h3{font-size:14.5px; margin-bottom:4px}
+.panel h4{font-size:11px; color:rgb(var(--a1)); margin-bottom:3px; font-weight:800; letter-spacing:.04em}
+.panel ul{margin:4px 0 0; padding:0 16px 0 0}
+.panel li{margin:3px 0; color:var(--muted)}
+.amount{font-family:"Heebo",sans-serif; font-size:22px; font-weight:900; margin-top:6px}
+.tiny{font-size:11px; color:var(--dim); margin-top:3px}
+.kicker{
+  margin-top:8px; padding:9px 12px; border-radius:12px;
+  background:rgba(var(--a1),.12); border:1px solid rgba(var(--a1),.28);
+  font-weight:700; font-size:13px;
+}
+.nums{
+  display:grid; grid-template-columns:1.15fr .85fr; gap:8px; margin-top:8px;
+}
+.big{
+  background:linear-gradient(150deg,rgba(var(--a1),.32),rgba(var(--a2),.12));
+  border:1px solid rgba(var(--a1),.45); border-radius:16px; padding:12px 14px;
+}
+.big .label{font-family:"Heebo",sans-serif; font-size:10px; letter-spacing:.14em; color:rgb(var(--a1)); font-weight:800}
+.big .sum{font-family:"Heebo",sans-serif; font-size:36px; font-weight:900; letter-spacing:-.04em; line-height:1}
+.big .sum small{font-size:.4em; color:var(--muted); font-weight:700}
+.row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line); font-size:13px}
+.row:last-of-type{border-bottom:0}
+.foot{margin-top:10px; text-align:center; color:var(--dim); font-size:11px}
+@media print{
+  body{background:#101028}
+  .page{width:auto}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="tag">מסמך לפגישה · 1 בספטמבר 2026 · 10:00</div>
+    <h1>כיכר <span>חרמון</span></h1>
+    <p class="lead">הצעת הפעלה לשנה הראשונה. מי מנהל, מי בצוות, כמה זה עולה, ומה מקבלים תמורת הכסף.</p>
+    <div class="chips">
+      <span>אדם גרי · <em>מנהל המתחם</em></span>
+      <span>4 ימים בשבוע</span>
+      <span>24,000 ₪ לחודש</span>
+      <span>צוות של שניים לידו</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">התפקיד</div>
+    <h2 class="h2">מנהל ומפקח. נוכח בשטח. לא המפיק.</h2>
+    <p style="color:var(--muted);margin-bottom:8px">אני מביא את החזון, בונה את המערכת, שומר על הסטנדרט, ומזיז את האנשים הנכונים. אני שם בהרבה מהדברים. אני לא האיש שסוגר מרצה ביום חמישי בערב.</p>
+    <div class="grid2">
+      <div class="panel yes">
+        <h3>כן, זה אני</h3>
+        <ul>
+          <li>חזון, כיוון וסטנדרט לכל המתחם</li>
+          <li>מודל הפעלה: Freemium, 90 יום, תוכן יומיומי</li>
+          <li>אוצרות התוכן: מה קורה פה, ולמה</li>
+          <li>חיבור שותפים וקהילות ברמה האסטרטגית</li>
+          <li>גיוס וניהול הצוות, יעדים ומספרים</li>
+          <li>פיקוח על הקפה והבר, בלי לנהל משמרות</li>
+          <li>נוכחות בשטח בארבעה ימים קבועים</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <h3>לא, בשביל זה יש צוות</h3>
+        <ul>
+          <li>הפקה בפועל של אירועים</li>
+          <li>שיחות שוטפות עם מרצים ומנטורים על לו״ז</li>
+          <li>ניהול משמרות, מלאי, קופה וספקים של הקפה</li>
+          <li>עמידה מאחורי הדלפק</li>
+        </ul>
+        <p class="tiny" style="margin-top:8px">ארבעה ימים בשבוע במתחם. מספיק שהמערכת תרוץ, בלי שאני הופך לעובד הקפה.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">הצוות</div>
+    <h2 class="h2">שניים לידי. הקפה נשאר אצלכם.</h2>
+    <div class="grid3" style="margin-top:8px">
+      <div class="panel hot">
+        <h4>01 · אדם גרי</h4>
+        <h3>מנהל המתחם</h3>
+        <p>4 ימים בשבוע. חזון, פיקוח, אוצרות, שותפים, צוות. נוכח בשטח.</p>
+        <div class="amount">24,000 ₪</div>
+        <p class="tiny">לחודש</p>
+      </div>
+      <div class="panel">
+        <h4>02 · ישראל</h4>
+        <h3>קהילות וחיבורים</h3>
+        <p>יומיים בשבוע, עד שלושה לפי הצורך. מביא קהילות ואנשים. עובד מול תוצאות: קהילות פעילות, אנשים שהגיעו, עוגנים שרצים.</p>
+        <div class="amount">8,000 ₪</div>
+        <p class="tiny">לחודש · יומיים, עם אפשרות לשלושה</p>
+      </div>
+      <div class="panel">
+        <h4>03 · מפיק או מפיקה</h4>
+        <h3>הפקה בפועל</h3>
+        <p>חמישה ימים, גמיש בין יום לערב. אירועים, מרצים, מנטורים, תיאום תוכן מול הקפה, סטודנטים ועובדים בשטח.</p>
+        <div class="amount">8,000 ₪</div>
+        <p class="tiny">לחודש · טווח 7–9 אלף. בגיוס חזק עד 11</p>
+      </div>
+    </div>
+    <div class="kicker">ניהול הקפה והבר בפועל לא בצוות שלי ולא בתקציב הזה. אתם תכננתם קפה ממילא. המפיקה מתאמת מולו תוכן, אני מפקח על הסטנדרט, התפעול היומיומי נשאר אצלכם.</div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">המספרים</div>
+    <h2 class="h2">40 אלף לחודש. 120 אלף ל־90 יום. 480 אלף לשנה.</h2>
+    <p style="color:var(--muted)">מעטפת האנשים שמפעילה את החיים במתחם. בלי שכירות, בלי שיפוץ, בלי משכורות הקפה. התוכן עצמו כמעט לא עולה כסף: הוא מגיע בברטר מספקים.</p>
+    <div class="nums">
+      <div class="big">
+        <div class="label">מעטפת הפעלה חודשית</div>
+        <div class="sum">40,000 <small>₪</small></div>
+        <div class="row"><b>אדם · מנהל המתחם</b><span>24,000</span></div>
+        <div class="row"><b>ישראל · קהילות</b><span>8,000</span></div>
+        <div class="row"><b>מפיק/ה בפועל</b><span>8,000</span></div>
+        <p class="tiny">אם המפיק/ה תהיה גיוס חזק במיוחד, השורה הזו יכולה לעלות עד 11,000. אז המעטפת החודשית היא 43,000, והשנה 516,000.</p>
+      </div>
+      <div>
+        <div class="panel hot" style="margin-bottom:8px">
+          <h4>90 יום · Proof of Life</h4>
+          <div class="amount">120,000 ₪</div>
+          <p class="tiny">קפה פתוח, 3–4 עוגנים שבועיים, קהילות ראשונות, ספקים ראשונים, לוח בסיסי ומועדון חברים פשוט.</p>
+        </div>
+        <div class="panel">
+          <h4>שנה ראשונה</h4>
+          <div class="amount">480,000 ₪</div>
+          <p class="tiny">12 חודשים של הצוות הזה. עדיין בלי קפה ובלי המקום עצמו.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">מה מקבלים</div>
+    <h2 class="h2">קודם חיים. אחר כך מערכת.</h2>
+    <div class="grid2" style="margin-top:8px">
+      <div class="panel">
+        <h3>90 הימים הראשונים</h3>
+        <ul>
+          <li>פותחים את הקפה כבסיס פעיל</li>
+          <li>שלושה עד ארבעה עוגנים קבועים בשבוע</li>
+          <li>שלוש עד ארבע קהילות מארחות</li>
+          <li>ספקים ומנטורים ראשונים</li>
+          <li>לוח אירועים והרשמה פשוטים</li>
+          <li>מועדון חברים בסיסי</li>
+          <li>פיילוט או שניים בהאב הגדול</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>עד סוף השנה</h3>
+        <ul>
+          <li>שני המתחמים עובדים יחד: כיכר והאב</li>
+          <li>קהילות קבועות, לא אירוע חד־פעמי</li>
+          <li>ספקים שחוזרים כי הם פוגשים קהל</li>
+          <li>תוכניות עומק בהאב</li>
+          <li>חבילות לקהילות ולארגונים</li>
+          <li>מודל הכנסות מעל הפרימיום החינמי</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid3" style="margin-top:8px">
+      <div class="panel"><h4>אחרי חודש</h4><p>קפה פעיל, לוח, שני עוגנים, שלוש קהילות במגע.</p></div>
+      <div class="panel"><h4>אחרי 90 יום</h4><p>עוגנים קבועים, 5–10 קהילות, ספקים שחוזרים, הכנסות ראשונות.</p></div>
+      <div class="panel"><h4>אחרי שנה</h4><p>קמפוס קטן שרץ, שותפים אסטרטגיים, הכנסה שלא תלויה באירוע בודד.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">מה מבקשים מחר</div>
+    <h2 class="h2">שלוש החלטות. בלי כל התשובות.</h2>
+    <div class="grid3" style="margin-top:8px">
+      <div class="panel hot"><h3>1. התפקיד</h3><p>אדם כמנהל המתחם, 4 ימים, 24,000 ₪ לחודש. לא מפיק, לא ברמן.</p></div>
+      <div class="panel"><h3>2. הצוות</h3><p>ישראל לקהילות ב־8,000. מפיק/ה בפועל סביב 8,000. הקפה אצלכם.</p></div>
+      <div class="panel"><h3>3. המסגרת</h3><p>120,000 ₪ ל־90 יום של Proof of Life, ואז שנה ב־480,000 למעטפת האנשים.</p></div>
+    </div>
+    <div class="kicker">מתחילים קטן, מוכיחים חיים, ואז בונים מערכת. תכלס.</div>
+  </div>
+
+  <div class="foot">כיכר חרמון · קריית שמונה · מסמך לפגישה עם שני · 1.9.2026</div>
+</div>
+</body>
+</html>
