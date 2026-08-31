@@ -100,11 +100,16 @@ body::before{
 .pf p em{font-style:normal;color:var(--text);font-weight:600}
 
 /* צוות */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.member{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;
+.team{display:grid;grid-template-columns:1.22fr 1fr 1fr;gap:16px;margin-top:34px;align-items:stretch}
+.member{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;height:100%;
   background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
-.member.lead{background:linear-gradient(150deg,rgba(var(--a1),.26),rgba(var(--a2),.10));
-  border-color:rgba(var(--a1),.46);box-shadow:0 0 70px -26px rgba(var(--a1),.5)}
+.member.lead{background:linear-gradient(150deg,rgba(var(--a1),.30),rgba(var(--a2),.12));
+  border-color:rgba(var(--a1),.62);border-width:2px;padding:32px 26px;
+  box-shadow:0 0 90px -22px rgba(var(--a1),.62)}
+.member.lead h3{font-size:25px}
+.member.lead .who{font-size:16px}
+.member.lead p{font-size:15.5px}
+.member.lead .price{font-size:38px}
 .member .role{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.16em;font-weight:700;color:var(--dim);margin-bottom:9px}
 .member h3{font-size:21px;margin-bottom:4px}
 .member .who{font-size:14px;color:rgb(var(--a1));font-weight:600;margin-bottom:12px}
@@ -160,9 +165,97 @@ body::before{
 .foot a:hover{text-decoration:underline}
 .foot .who{font-family:"Heebo",sans-serif;font-weight:700;color:var(--text);font-size:16px}
 
+
+/* ===== מתחמים ===== */
+.venue{border:1px solid rgba(var(--a1),.34);border-radius:var(--r);overflow:hidden;margin-top:34px;
+  background:linear-gradient(155deg,rgba(var(--a1),.13),rgba(255,255,255,.03))}
+.venue-head{padding:26px 28px;border-bottom:1px solid var(--line);display:flex;
+  justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.venue-head .tag{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.16em;font-weight:700;color:rgb(var(--a1));margin-bottom:7px}
+.venue-head h3{font-size:clamp(23px,3vw,30px)}
+.venue-head .stat{text-align:left}
+.venue-head .stat b{display:block;font-family:"Heebo",sans-serif;font-weight:900;font-size:23px;font-variant-numeric:tabular-nums}
+.venue-head .stat span{font-size:12.5px;color:var(--muted)}
+.venue-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.vcol{padding:24px 28px}
+.vcol + .vcol{border-right:1px solid var(--line)}
+.vcol h4{font-size:14.5px;color:rgb(var(--a1));font-family:"Heebo",sans-serif;font-weight:700;margin-bottom:11px}
+
+/* ===== גאנט ===== */
+.gantt{margin-top:32px;border:1px solid var(--line);border-radius:var(--r);overflow-x:auto;
+  background:linear-gradient(155deg,rgba(var(--a1),.09),rgba(255,255,255,.028))}
+.gantt-inner{min-width:820px}
+.gmonths{display:grid;grid-template-columns:220px repeat(12,1fr);border-bottom:1px solid var(--line)}
+.gmonths div{padding:11px 6px;text-align:center;font-family:"Heebo",sans-serif;font-size:11.5px;
+  font-weight:700;color:var(--dim);border-left:1px solid rgba(255,255,255,.05)}
+.gmonths div:first-child{text-align:right;padding-right:18px;color:var(--muted)}
+.grow{display:grid;grid-template-columns:220px repeat(12,1fr);align-items:center;border-bottom:1px solid rgba(255,255,255,.05)}
+.grow:last-child{border-bottom:0}
+.grow > .lbl{padding:11px 18px 11px 10px;font-size:13.5px;color:var(--text);font-weight:600;font-family:"Heebo",sans-serif}
+.grow .cell{height:100%;border-left:1px solid rgba(255,255,255,.04);min-height:38px}
+.bar{margin:9px 3px;height:20px;border-radius:6px;grid-row:1;display:flex;align-items:center;
+  justify-content:center;font-size:10.5px;font-family:"Heebo",sans-serif;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.b1{background:linear-gradient(90deg,rgba(var(--a1),.85),rgba(var(--a1),.55))}
+.b2{background:linear-gradient(90deg,rgba(var(--a2),.85),rgba(var(--a2),.55))}
+.b3{background:linear-gradient(90deg,rgba(34,197,94,.8),rgba(34,197,94,.5))}
+.b4{background:repeating-linear-gradient(45deg,rgba(var(--a1),.55),rgba(var(--a1),.55) 6px,rgba(var(--a1),.28) 6px,rgba(var(--a1),.28) 12px)}
+
+/* ===== טבלאות ===== */
+.tbl{margin-top:30px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  background:linear-gradient(155deg,rgba(var(--a1),.10),rgba(255,255,255,.028))}
+.tbl .th{display:grid;grid-template-columns:1.6fr 1fr 2.2fr;gap:14px;padding:13px 24px;
+  border-bottom:1px solid var(--line2);font-family:"Heebo",sans-serif;font-size:12px;
+  font-weight:700;letter-spacing:.1em;color:var(--dim)}
+.tbl .tr{display:grid;grid-template-columns:1.6fr 1fr 2.2fr;gap:14px;padding:14px 24px;
+  border-bottom:1px solid rgba(255,255,255,.06);font-size:14.5px;align-items:baseline}
+.tbl .tr:last-child{border-bottom:0}
+.tbl .tr b{font-family:"Heebo",sans-serif;font-weight:700;font-size:15px}
+.tbl .tr .num{font-family:"Heebo",sans-serif;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl .tr span{color:var(--muted);font-size:13.5px}
+.tbl .grp{padding:12px 24px;background:rgba(var(--a1),.14);font-family:"Heebo",sans-serif;
+  font-weight:800;font-size:13.5px;letter-spacing:.04em;color:rgb(var(--a1));
+  border-bottom:1px solid var(--line)}
+.tbl .sum{display:grid;grid-template-columns:1.6fr 1fr 2.2fr;gap:14px;padding:17px 24px;
+  background:rgba(var(--a1),.20);font-family:"Heebo",sans-serif;font-weight:800;font-size:16px;align-items:baseline}
+.tbl .sum .num{font-size:21px;font-weight:900;font-variant-numeric:tabular-nums}
+.disclaim{margin-top:16px;font-size:13.5px;color:var(--dim);line-height:1.6;
+  border-right:2px solid rgba(var(--a1),.5);padding-right:14px}
+
+/* ===== רמפת הכנסות ===== */
+.ramp{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:32px}
+.rp{border:1px solid var(--line);border-radius:14px;padding:18px 16px;
+  background:linear-gradient(160deg,rgba(34,197,94,.13),rgba(255,255,255,.03))}
+.rp .mo{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.1em;font-weight:700;color:#4ADE80;margin-bottom:7px}
+.rp b{display:block;font-family:"Heebo",sans-serif;font-weight:900;font-size:19px;font-variant-numeric:tabular-nums}
+.rp span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+
+/* ===== V1 / V2 ===== */
+.vers{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.vr{border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;
+  background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
+.vr.now{border-color:rgba(var(--a1),.55);border-width:2px;
+  background:linear-gradient(150deg,rgba(var(--a1),.24),rgba(var(--a2),.09));
+  box-shadow:0 0 80px -26px rgba(var(--a1),.5)}
+.vr .badge{display:inline-block;font-family:"Heebo",sans-serif;font-size:12px;font-weight:800;
+  letter-spacing:.1em;padding:6px 14px;border-radius:999px;background:rgba(var(--a1),.24);
+  color:rgb(var(--a1));margin-bottom:14px}
+.vr.now .badge{background:linear-gradient(135deg,rgb(var(--a1)),rgb(var(--a2)));color:#fff}
+.vr h3{font-size:23px;margin-bottom:10px}
+.vr > p{font-size:15px;color:var(--muted);margin-bottom:14px}
+
+@media (max-width:900px){
+  .venue-body,.vers{grid-template-columns:1fr}
+  .vcol + .vcol{border-right:0;border-top:1px solid var(--line)}
+  .ramp{grid-template-columns:1fr 1fr}
+  .tbl .th{display:none}
+  .tbl .tr,.tbl .sum{grid-template-columns:1fr auto;gap:6px}
+  .tbl .tr span{grid-column:1 / -1}
+}
+
 @media (max-width:900px){
   .sec{padding:58px 0}
-  .facts,.grid2,.grid3,.team,.phases,.decide,.money{grid-template-columns:1fr}
+  .facts,.grid2,.grid3,.phases,.decide,.money{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr}
   .pf{grid-template-columns:1fr;gap:12px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -175,11 +268,11 @@ body::before{
   <div class="wrap">
     <div class="tagline">הצעת הפעלה <b>כיכר חרמון, קריית שמונה</b></div>
     <h1>להפעיל את <span>כיכר חרמון</span></h1>
-    <p class="sub">מעטפת אנשים שמפעילה את המתחם: מנהל, קהילות והפקה. מתחילים בהנעה, בונים הרגל, ומגיעים למערכת שעובדת.</p>
+    <p class="sub">להפעיל את הכיכר והקפה מהיום הראשון, ובמקביל להקים ולפתוח את ההאב הגדול. שנה אחת, שני מתחמים, מערכת אחת.</p>
     <div class="facts">
       <div class="fact"><b>4 ימים</b><span>נוכחות שלי בשבוע, בשעות שבהן המתחם חי</span></div>
       <div class="fact"><b>3 אנשים</b><span>מנהל, קהילות והפקה בפועל</span></div>
-      <div class="fact"><b>40,000 ₪</b><span>מעטפת הפעלה חודשית מלאה</span></div>
+      <div class="fact"><b>שני מתחמים</b><span>הכיכר פועלת מיד, ההאב נפתח בחודש השלישי</span></div>
     </div>
   </div>
 </section>
@@ -317,12 +410,12 @@ body::before{
         <div class="who">מפיק או מפיקה</div>
         <p>עושה שהאירועים קורים: מרצים, מנטורים, ספקים, לוגיסטיקה, ותיאום התוכן מול הקפה. גמיש בין יום לערב.</p>
         <div class="out"><b>התוצר:</b> לוח שרץ בלי תקלות, מרצים שמגיעים, אירועים שקורים בזמן.</div>
-        <div class="price">8,000 ₪<div class="per">לחודש · חמישה ימים · טווח 7 עד 9, ולגיוס חזק במיוחד עד 11</div></div>
+        <div class="price">8,000 עד 11,000 ₪<div class="per">לחודש · חמישה ימים, גמיש בין יום לערב</div></div>
       </div>
     </div>
 
     <div class="note-box">
-      <b>הקפה נשאר בניהול שלכם</b>, בדיוק כמו שתכננתם ממילא. אנחנו מזרימים אליו תנועה יומיומית ומתאמים מולו את התוכן, כך שהוא מרוויח מהמערכת בלי שתשלמו על שכבת ניהול נוספת.
+      <b>את הקפה אנחנו מנהלים מלמעלה:</b> קונספט, תפריט, סטנדרט, תוכן ותמחור. מתחת לזה צריך מנהל או מנהלת קפה שמחזיקים את היומיום, כלומר עובדים, משמרות, הזמנות, ספקים ואוכל. זו משרה נפרדת שמופיעה בטבלת ההוצאות.
     </div>
   </div>
 </section>
@@ -346,24 +439,321 @@ body::before{
   </div>
 </section>
 
-<!-- ===== המספרים ===== -->
-<section class="sec acc-pink">
-  <div class="wrap">
-    <div class="eyebrow">המספרים</div>
-    <h2 class="h2">מעטפת הפעלה, לא תקציב מתחם</h2>
-    <p class="lead">זו העלות של האנשים שמפעילים את החיים במקום. לא כלולים בה שכירות, שיפוץ, ציוד ומשכורות הקפה.</p>
 
-    <div class="money">
-      <div class="bill">
-        <div class="row"><span>אדם גריי · מנהל המתחם</span><b>24,000 ₪</b></div>
-        <div class="row"><span>ישראל · קהילות וחיבורים</span><b>8,000 ₪</b></div>
-        <div class="row"><span>מפיק או מפיקה · הפקה בפועל</span><b>8,000 ₪</b></div>
-        <div class="row total"><span>מעטפת חודשית</span><b>40,000 ₪</b></div>
+<!-- ===== מתחם 1 ===== -->
+<section class="sec acc-cyan" id="venue1">
+  <div class="wrap">
+    <div class="eyebrow">מתחם 1</div>
+    <h2 class="h2">הכיכר וקפה חרמון</h2>
+    <p class="lead">החזית החיה. זה מה שרואים מהרחוב, וזה מה שמייצר את התנועה היומיומית ואת ההכנסה הראשונה. כאן מתחילים, מהחודש הראשון.</p>
+
+    <div class="venue">
+      <div class="venue-head">
+        <div>
+          <div class="tag">פועל מחודש 1</div>
+          <h3>קפה, רחבה מקורה וכיכר פתוחה</h3>
+        </div>
+        <div class="stat"><b>חודש 1</b><span>מתחילים לפעול ולהכניס</span></div>
       </div>
-      <div class="horizon">
-        <div class="hz"><b>120,000 ₪</b><span>שלושת החודשים הראשונים, שלב ההנעה</span></div>
-        <div class="hz"><b>480,000 ₪</b><span>שנה מלאה של המעטפת הזו</span></div>
-        <div class="hz" style="border-style:dashed"><b>43,000 ₪</b><span>אם ההפקה תהיה גיוס חזק במיוחד. שנה: 516,000 ₪</span></div>
+      <div class="venue-body">
+        <div class="vcol">
+          <h4>מה קורה שם</h4>
+          <ul class="plist">
+            <li>קפה, אוכל קל ובר ערב</li>
+            <li>עבודה לא פורמלית, פגישות וסטודנטים</li>
+            <li>שלושה עד ארבעה עוגנים שבועיים</li>
+            <li>שעות קבלה עם אנשי מקצוע</li>
+            <li>ערבי קהילה מארחת</li>
+            <li>הופעות קטנות, מוזיקה ותרבות מקומית</li>
+            <li>שוק יוצרים ואירועי חוץ בכיכר</li>
+          </ul>
+        </div>
+        <div class="vcol">
+          <h4>מי מפעיל</h4>
+          <ul class="plist">
+            <li><b>אנחנו מנהלים מלמעלה:</b> קונספט, תפריט, סטנדרט, תוכן, תמחור וכיוון מסחרי</li>
+            <li><b>מנהל או מנהלת קפה:</b> עובדים, משמרות, הזמנות, ספקים, מלאי ואוכל</li>
+            <li><b>בריסטות וצוות משמרות:</b> סטודנטים בשכר, חלקם בתמורה להטבות</li>
+            <li><b>המפיקה שלנו</b> מתאמת את התוכן והאירועים מול הקפה</li>
+          </ul>
+          <p style="font-size:13.5px;color:var(--dim);margin-top:14px">מי מעסיק את צוות הקפה, אנחנו או העמותה, זו החלטה פתוחה שכדאי לסגור מוקדם.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== מתחם 2 ===== -->
+<section class="sec acc-indigo" id="venue2">
+  <div class="wrap">
+    <div class="eyebrow">מתחם 2</div>
+    <h2 class="h2">ההאב הגדול</h2>
+    <p class="lead">חלל העומק, במרחק של 15 עד 20 מטר מהכיכר. זה הפרויקט המקביל: בזמן שהכיכר כבר פועלת, ההאב מתוכנן, משופץ, מרוהט ומושק. שם נמצאת ההכנסה המשמעותית של שנה שנייה.</p>
+
+    <div class="venue">
+      <div class="venue-head">
+        <div>
+          <div class="tag">הקמה בחודשים 1 עד 3, השקה בחודש 3</div>
+          <h3>הקמה, השקה והפעלה</h3>
+        </div>
+        <div class="stat"><b>חודש 3</b><span>יעד השקה</span></div>
+      </div>
+      <div class="venue-body">
+        <div class="vcol">
+          <h4>שלב ההקמה, באחריותי</h4>
+          <ul class="plist">
+            <li>תכנון עומק והגדרה פונקציונלית של החלל</li>
+            <li>ליווי אדריכלות ועיצוב פנים</li>
+            <li>קבלת החלטות השיפוץ מול הקבלן</li>
+            <li>בחירת ריהוט, עמדות עבודה וחדרי ישיבות</li>
+            <li>מערכות AV: מקרן חוץ גדול, מסכים וסאונד</li>
+            <li>תשתיות: חשמל, תאורה, מיזוג, אקוסטיקה, אינטרנט</li>
+            <li>שילוט, מיתוג פיזי והשקה</li>
+          </ul>
+        </div>
+        <div class="vcol">
+          <h4>מה קורה בו אחרי ההשקה</h4>
+          <ul class="plist">
+            <li>סדנאות, הרצאות עומק והכשרות</li>
+            <li>קורסים ותוכניות רב מפגשיות</li>
+            <li>עמדות עבודה: חלקן חינם לסטודנטים, חלקן בתשלום</li>
+            <li>חדרי ישיבות להשכרה</li>
+            <li>שוכרים קבועים: פרילנסרים, צוותים קטנים וחברות</li>
+            <li>אירועי קהילה גדולים והאקתונים</li>
+            <li>הקרנות ואירועי חוץ עם המקרן הגדול</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="note-box">
+      <b>לוח הזמנים של ההאב תלוי בשני דברים שאינם בידיי:</b> מצב החלל הקיים והיתרים. שלושה חודשים עד השקה הוא יעד שאפתני אך אפשרי אם מתחילים תכנון בשבוע הראשון ומקבלים החלטות מהר.
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== גאנט ===== -->
+<section class="sec acc-violet" id="gantt">
+  <div class="wrap">
+    <div class="eyebrow">שנה ראשונה</div>
+    <h2 class="h2">הכל רץ במקביל, לא בטור</h2>
+    <p class="lead">הכיכר פותחת מיד ומתחילה להכניס. במקביל ההאב מתוכנן ומשופץ, ובחודש השלישי הוא נפתח. משם השנה נבנית בשכבות.</p>
+
+    <div class="gantt">
+      <div class="gantt-inner">
+        <div class="gmonths">
+          <div>חודש</div>
+          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+          <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+        </div>
+
+        <div class="grow">
+          <div class="lbl">קפה וכיכר, פעילות</div>
+          <div class="bar b1" style="grid-column:2 / span 12">פועל מהיום הראשון</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">עוגנים שבועיים ותוכן</div>
+          <div class="bar b1" style="grid-column:2 / span 12">שלושה עד ארבעה עוגנים קבועים</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">קהילות וספקים</div>
+          <div class="bar b1" style="grid-column:2 / span 12">גיוס, אירוח, והרחבה</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, תכנון ואדריכלות</div>
+          <div class="bar b4" style="grid-column:2 / span 2">תכנון ועיצוב</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, שיפוץ ותשתיות</div>
+          <div class="bar b4" style="grid-column:2 / span 3">שיפוץ, חשמל, מיזוג, אקוסטיקה</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, ריהוט ומערכות</div>
+          <div class="bar b4" style="grid-column:4 / span 1">ריהוט ו־AV</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, השקה</div>
+          <div class="bar b2" style="grid-column:4 / span 1">השקה</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, תוכן עומק והכשרות</div>
+          <div class="bar b2" style="grid-column:5 / span 9">סדנאות, קורסים ותוכניות</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">האב, עמדות ושוכרים</div>
+          <div class="bar b2" style="grid-column:6 / span 8">עמדות עבודה, חדרי ישיבות, שוכרים</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">מועדון חברים והרשמה</div>
+          <div class="bar b1" style="grid-column:3 / span 11">כרטיס, לוח אירועים, ואז אפליקציה</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">שיווק וגיוס קהל</div>
+          <div class="bar b1" style="grid-column:2 / span 12">סטודנטים, קהילות, דיגיטל ושטח</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">שותפויות ותקציבים</div>
+          <div class="bar b3" style="grid-column:3 / span 10">עירייה, אשכול, תל חי, מיגל, קרנות</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">הכנסות</div>
+          <div class="bar b3" style="grid-column:2 / span 12">מתחילות בקפה, ומתרחבות בשכבות</div>
+        </div>
+      </div>
+    </div>
+    <p class="disclaim">הפסים המקווקווים הם עבודות הקמה. הפסים המלאים הם פעילות שוטפת. ההשקה של ההאב בחודש השלישי מותנית בכך שהתכנון מתחיל בשבוע הראשון.</p>
+  </div>
+</section>
+
+
+<!-- ===== הוצאות ===== -->
+<section class="sec acc-pink" id="costs">
+  <div class="wrap">
+    <div class="eyebrow">הוצאות</div>
+    <h2 class="h2">מה באמת עולה להפעיל את המקום</h2>
+    <p class="lead">שלוש שכבות: הצוות שמפעיל את המערכת, התפעול השוטף של הקפה וההאב, וההקמה החד פעמית של ההאב. אלה אומדני עבודה לדיון, לא הצעות מחיר.</p>
+
+    <div class="tbl">
+      <div class="th"><div>סעיף</div><div>לחודש</div><div>הערה</div></div>
+
+      <div class="grp">שכבה 1 · צוות הליבה</div>
+      <div class="tr"><b>מנהל המתחם</b><div class="num">24,000 ₪</div><span>אדם גריי, ארבעה ימים בשבוע</span></div>
+      <div class="tr"><b>קהילות וחיבורים</b><div class="num">8,000 ₪</div><span>ישראל, יומיים עד שלושה בשבוע</span></div>
+      <div class="tr"><b>הפקה בפועל</b><div class="num">8,000 עד 11,000 ₪</div><span>חמישה ימים, גמיש בין יום לערב</span></div>
+
+      <div class="grp">שכבה 2 · תפעול הקפה והכיכר</div>
+      <div class="tr"><b>ניהול קפה ומשמרות</b><div class="num">10,000 ₪</div><span>עובדים, הזמנות, ספקים, מלאי ואוכל</span></div>
+      <div class="tr"><b>צוות קפה ובריסטות</b><div class="num">15,000 ₪</div><span>סטודנטים במשמרות, חלקם בשילוב הטבות</span></div>
+      <div class="tr"><b>תחזוקת ציוד ומתכלים</b><div class="num">800 ₪</div><span>מכונת קפה, כלים, תיקונים</span></div>
+      <div class="tr"><b>חומרי גלם</b><div class="num">לפי פדיון</div><span>כשליש מהמכירות. גדל עם ההכנסה, לא לפניה</span></div>
+
+      <div class="grp">שכבה 3 · תפעול ההאב, מחודש 3</div>
+      <div class="tr"><b>אחראי חלל</b><div class="num">5,000 ₪</div><span>סטודנט במשרה חלקית, נוכח בשעות הפעילות</span></div>
+      <div class="tr"><b>ניקיון</b><div class="num">2,500 ₪</div><span>חלל גדול, פעילות יומיומית</span></div>
+      <div class="tr"><b>חשמל, מים ומיזוג</b><div class="num">4,000 ₪</div><span>הסעיף הכבד בחלל בגודל כזה</span></div>
+      <div class="tr"><b>אינטרנט ותקשורת</b><div class="num">600 ₪</div><span>קו עסקי ורשת אלחוטית</span></div>
+      <div class="tr"><b>מתכלים ותחזוקה</b><div class="num">2,000 ₪</div><span>נייר, ניקיון, כוסות, קפה לחלל, תיקונים</span></div>
+      <div class="tr"><b>ביטוח</b><div class="num">800 ₪</div><span>תכולה וצד שלישי</span></div>
+
+      <div class="grp">שכבה 4 · תוכן, שיווק וקהילה</div>
+      <div class="tr"><b>כיבוד וקפה לאירועים</b><div class="num">3,000 ₪</div><span>מה שמביא סטודנטים בפועל</span></div>
+      <div class="tr"><b>מוזיקאים ואמנים</b><div class="num">2,500 ₪</div><span>הופעות קטנות, לרוב מחיר סמלי</span></div>
+      <div class="tr"><b>מרצים בתשלום נקודתי</b><div class="num">1,500 ₪</div><span>רוב התוכן בברטר, חלקו לא</span></div>
+      <div class="tr"><b>שיווק דיגיטלי ועיצוב</b><div class="num">2,500 ₪</div><span>קמפיינים לסטודנטים, חומרים, קריאייטיב</span></div>
+      <div class="tr"><b>שילוט וחומרי אירוע</b><div class="num">1,000 ₪</div><span>באנרים, שילוט מתחלף, נראות בכיכר</span></div>
+
+      <div class="grp">שכבה 5 · כללי</div>
+      <div class="tr"><b>הנהלת חשבונות</b><div class="num">1,500 ₪</div><span></span></div>
+      <div class="tr"><b>ייעוץ משפטי</b><div class="num">1,000 ₪</div><span>הסכמי שימוש, קהילות, ספקים ושוכרים</span></div>
+      <div class="tr"><b>תוכנה, אתר והרשמה</b><div class="num">700 ₪</div><span>לוח אירועים, מועדון חברים, CRM בסיסי</span></div>
+      <div class="tr"><b>נסיעות ושונות</b><div class="num">1,000 ₪</div><span></span></div>
+
+      <div class="sum"><div>סך תפעול חודשי, אחרי שההאב פתוח</div><div class="num">95,000 עד 98,000 ₪</div><div style="font-size:13px;color:var(--muted);font-weight:400">בלי חומרי גלם, בלי שכירות ובלי הקמת ההאב</div></div>
+    </div>
+
+    <div class="grid2 mt-l">
+      <div class="card">
+        <h4>בחודשים 1 עד 2, לפני שההאב פתוח</h4>
+        <p style="font-size:15px">שכבת ההאב עדיין לא פועלת, ולכן התפעול החודשי עומד על כ־<b style="color:var(--text)">78,000 עד 81,000 ₪</b>. זו נקודת הפתיחה בפועל.</p>
+      </div>
+      <div class="card">
+        <h4>שנה ראשונה, תפעול בלבד</h4>
+        <p style="font-size:15px">בממוצע משוקלל על פני שנים עשר חודשים, כולל החודשים הראשונים הזולים יותר: כ־<b style="color:var(--text)">1.05 עד 1.15 מיליון ₪</b>.</p>
+      </div>
+    </div>
+    <p class="disclaim">כל המספרים הם אומדנים שבניתי לצורך הדיון, על בסיס היקפי הפעילות שתוארו. לפני החלטה צריך שלוש הצעות מחיר לסעיפים הכבדים: שיפוץ ההאב, מיזוג, וצוות הקפה.</p>
+  </div>
+</section>
+
+<!-- ===== הקמת ההאב ===== -->
+<section class="sec acc-blue" id="capex">
+  <div class="wrap">
+    <div class="eyebrow">הקמה חד פעמית</div>
+    <h2 class="h2">מה עולה להקים את ההאב</h2>
+    <p class="lead">זו השקעה חד פעמית, לא הוצאה חוזרת. הטווח רחב כי הוא תלוי בגודל החלל ובמצב שבו הוא נמסר. זה הסעיף שדורש הצעות מחיר לפני כל החלטה.</p>
+
+    <div class="tbl">
+      <div class="th"><div>סעיף</div><div>טווח</div><div>מה זה כולל</div></div>
+      <div class="tr"><b>תכנון, אדריכלות ועיצוב פנים</b><div class="num">35,000 עד 60,000 ₪</div><span>תוכניות, הדמיות, כתב כמויות, ליווי ביצוע</span></div>
+      <div class="tr"><b>שיפוץ ותשתיות</b><div class="num">200,000 עד 400,000 ₪</div><span>חשמל, תאורה, מיזוג, אקוסטיקה, גבס, ריצוף, צבע</span></div>
+      <div class="tr"><b>ריהוט ועמדות עבודה</b><div class="num">60,000 עד 120,000 ₪</div><span>שולחנות, כיסאות, ספות, עמדות, אחסון</span></div>
+      <div class="tr"><b>מערכות AV</b><div class="num">40,000 עד 70,000 ₪</div><span>מקרן חוץ גדול, מסכים, סאונד, מיקרופונים, במה</span></div>
+      <div class="tr"><b>חדרי ישיבות</b><div class="num">40,000 עד 80,000 ₪</div><span>מחיצות זכוכית, בידוד אקוסטי, ריהוט, מסכים</span></div>
+      <div class="tr"><b>תשתית IT ורשת</b><div class="num">12,000 עד 20,000 ₪</div><span>תקשורת, נקודות רשת, ראוטרים, מדפסת</span></div>
+      <div class="tr"><b>מטבחון, שירותים ונגישות</b><div class="num">25,000 עד 50,000 ₪</div><span>עמדת קפה פנימית, התאמות נגישות</span></div>
+      <div class="tr"><b>שילוט ומיתוג פיזי</b><div class="num">15,000 עד 30,000 ₪</div><span>חזית, שילוט פנים, נראות מהכיכר</span></div>
+      <div class="sum"><div>סך הקמת ההאב</div><div class="num">427,000 עד 830,000 ₪</div><div style="font-size:13px;color:var(--muted);font-weight:400">תלוי בגודל החלל ובמצב הקיים</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== הכנסות ===== -->
+<section class="sec acc-green" id="revenue">
+  <div class="wrap">
+    <div class="eyebrow">הכנסות</div>
+    <h2 class="h2">מתי מתחיל להיכנס כסף</h2>
+    <p class="lead">ההכנסה לא מחכה לסוף. הקפה מכניס מהחודש הראשון, האירועים מצטרפים בחודש השלישי, וההאב הוא הקפיצה האמיתית מהחודש החמישי.</p>
+
+    <div class="ramp">
+      <div class="rp"><div class="mo">חודש 1 עד 2</div><b>15 עד 25 אלף</b><span>קפה, אוכל קל ובר ערב</span></div>
+      <div class="rp"><div class="mo">חודש 3 עד 4</div><b>25 עד 40 אלף</b><span>נוספים ערבי בירה, הופעות ואירועי כיכר</span></div>
+      <div class="rp"><div class="mo">חודש 5 עד 6</div><b>40 עד 60 אלף</b><span>נוספות סדנאות בתשלום ועמדות עבודה בהאב</span></div>
+      <div class="rp"><div class="mo">חודש 7 עד 8</div><b>55 עד 75 אלף</b><span>נוספים חדרי ישיבות וחבילות לקהילות</span></div>
+      <div class="rp"><div class="mo">חודש 9 עד 10</div><b>65 עד 90 אלף</b><span>נוספים שוכרים קבועים בהאב</span></div>
+      <div class="rp"><div class="mo">חודש 11 עד 12</div><b>75 עד 110 אלף</b><span>נוספות הכשרות ותוכניות עומק</span></div>
+    </div>
+
+    <div class="grid3 mt-l">
+      <div class="card">
+        <h4>מה מכניס מהיום הראשון</h4>
+        <ul class="plist"><li>קפה, שתייה ואוכל קל</li><li>בר ערב</li><li>אירועים פרטיים קטנים</li></ul>
+      </div>
+      <div class="card">
+        <h4>מה מצטרף תוך רבעון</h4>
+        <ul class="plist"><li>סדנאות והרצאות בתשלום</li><li>ערבי מוזיקה ובירה</li><li>חבילות ראשונות לקהילות</li></ul>
+      </div>
+      <div class="card hot">
+        <h4>מה משנה את התמונה</h4>
+        <ul class="plist"><li>עמדות עבודה ומנויים</li><li>שוכרים קבועים בהאב</li><li>הכשרות ותוכניות עומק</li><li>תקציבים ושותפים ציבוריים</li></ul>
+      </div>
+    </div>
+    <p class="disclaim">הטווחים מבוססים על היקפי הפעילות המתוארים ועל הנחת תפוסה זהירה. לא הנחתי הכנסה מתקציבים ציבוריים, והם יכולים לשנות את התמונה לטובה.</p>
+  </div>
+</section>
+
+<!-- ===== V1 ו V2 ===== -->
+<section class="sec acc-teal" id="versions">
+  <div class="wrap">
+    <div class="eyebrow">איך מתחילים</div>
+    <h2 class="h2">מתחילים קטן, ומגדילים כשזה עובד</h2>
+    <p class="lead">אין צורך להתחייב לכל התמונה מהיום הראשון. הגרסה הראשונה מוכיחה שהמנוע עובד, והשנייה בונה עליה.</p>
+
+    <div class="vers">
+      <div class="vr now">
+        <span class="badge">V1 · שנה ראשונה</span>
+        <h3>להוכיח שהמקום חי</h3>
+        <p>צוות ליבה רזה, קפה פועל, עוגנים שבועיים, קהילות ראשונות, והאב שמוקם ונפתח.</p>
+        <ul class="plist">
+          <li>שלושה אנשי ליבה ולא יותר</li>
+          <li>שלושה עד ארבעה עוגנים שבועיים, לא לוח עמוס</li>
+          <li>רוב התוכן בברטר, בלי תקציב תוכן גדול</li>
+          <li>מועדון חברים פשוט, בלי אפליקציה</li>
+          <li>ההאב נפתח עם תוכן בסיסי ועמדות עבודה</li>
+          <li>מדידה: כמה הגיעו, כמה חזרו, כמה שילמו</li>
+        </ul>
+      </div>
+      <div class="vr">
+        <span class="badge">V2 · שנה שנייה</span>
+        <h3>להפוך את זה למוקד אזורי</h3>
+        <p>אחרי שיש הרגל, קהל וקהילות, מרחיבים לתוכניות עומק ולהכנסה שלא תלויה באירוע בודד.</p>
+        <ul class="plist">
+          <li>הכשרות ותוכניות רב מפגשיות בתשלום</li>
+          <li>שוכרים קבועים ומשרדים בהאב</li>
+          <li>אפליקציה מלאה למועדון החברים</li>
+          <li>חבילות שנתיות לקהילות ולארגונים</li>
+          <li>תקציבים אזוריים ולאומיים כמקור קבוע</li>
+          <li>הרחבת הצוות לפי ההכנסות, לא לפניהן</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -372,7 +762,7 @@ body::before{
 <!-- ===== לוח זמנים ===== -->
 <section class="sec acc-violet">
   <div class="wrap">
-    <div class="eyebrow">לוח זמנים</div>
+    <div class="eyebrow">קצב</div>
     <h2 class="h2">מקום לא מתמלא בתשעים יום</h2>
     <p class="lead">בתשעים יום מוכיחים שהמנוע עובד. את ההרגל בונים על פני חצי שנה, ואת המערכת השלמה על פני שנה. זו הדרך שבה מקומות כאלה באמת נבנים.</p>
 
@@ -436,8 +826,8 @@ body::before{
       </div>
       <div class="dc">
         <div class="n">החלטה 03</div>
-        <b>המסגרת</b>
-        <p>מעטפת של 40,000 ₪ לחודש, שמתחילה בשלושה חודשי הנעה.</p>
+        <b>תמיכה בקונספט ובהוצאה לפועל</b>
+        <p>אישור עקרוני למודל שמוצג כאן, ומנדט להתחיל להוציא אותו לפועל: הכיכר מחודש ראשון, וההאב במקביל.</p>
       </div>
     </div>
     <div class="kicker solid">מתחילים קטן, מוכיחים שהמנוע עובד, ואז בונים מערכת. תכלס.</div>
