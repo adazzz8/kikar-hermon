@@ -101,14 +101,14 @@ body::before{
 
 /* צוות */
 .team{display:grid;grid-template-columns:1.22fr 1fr 1fr;gap:16px;margin-top:34px;align-items:stretch}
-.member{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;height:100%;
+.member{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;align-self:stretch;
   background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
-.member.lead{background:linear-gradient(150deg,rgba(var(--a1),.30),rgba(var(--a2),.12));
+.member.primary{background:linear-gradient(150deg,rgba(var(--a1),.30),rgba(var(--a2),.12));
   border-color:rgba(var(--a1),.62);border-width:2px;padding:25px 21px;
   box-shadow:0 0 90px -22px rgba(var(--a1),.62)}
-.member.lead h3{font-size:24px}
-.member.lead .who{font-size:15px}
-.member.lead .price{color:rgb(var(--a1))}
+.member.primary h3{font-size:24px}
+.member.primary .who{font-size:15px}
+.member.primary .price{color:rgb(var(--a1))}
 .member .role{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.16em;font-weight:700;color:var(--dim);margin-bottom:9px}
 .member h3{font-size:21px;margin-bottom:4px}
 .member .who{font-size:14px;color:rgb(var(--a1));font-weight:600;margin-bottom:12px}
@@ -197,6 +197,7 @@ body::before{
 .b1{background:linear-gradient(90deg,rgba(var(--a1),.85),rgba(var(--a1),.55))}
 .b2{background:linear-gradient(90deg,rgba(var(--a2),.85),rgba(var(--a2),.55))}
 .b3{background:linear-gradient(90deg,rgba(34,197,94,.8),rgba(34,197,94,.5))}
+.b5{background:linear-gradient(90deg,rgba(148,163,184,.55),rgba(148,163,184,.3))}
 .b4{background:repeating-linear-gradient(45deg,rgba(var(--a1),.55),rgba(var(--a1),.55) 6px,rgba(var(--a1),.28) 6px,rgba(var(--a1),.28) 12px)}
 
 /* ===== טבלאות ===== */
@@ -366,8 +367,8 @@ body::before{
       <div class="card">
         <h4>שטח, אנשים ותקציב</h4>
         <ul class="plist">
-          <li>שותפויות מול העירייה, האשכול, תל חי, מיגל וגופים אזוריים</li>
-          <li>גיוס תקציבים, מענקים וקולות קוראים</li>
+          <li>שותפויות מול העירייה, המועצות האזוריות, האשכול, תל חי, מיגל וגופי פילנתרופיה</li>
+          <li>גיוס תקציבים, מענקים, קולות קוראים ופילנתרופיה</li>
           <li>גיוס הצוות, הצבת יעדים וניהול מול מספרים</li>
           <li>הסטנדרט של המקום: איך הוא נראה, מרגיש ומתפקד</li>
           <li>נוכחות בשטח ארבעה ימים בשבוע</li>
@@ -385,7 +386,7 @@ body::before{
     <p class="lead">צוות רזה שמספיק כדי להפעיל מערכת, ולא כדי לנהל ארגון.</p>
 
     <div class="team">
-      <div class="member lead">
+      <div class="member primary">
         <div class="role">01 · ניהול</div>
         <h3>מנהל המתחם</h3>
         <div class="who">אדם גריי</div>
@@ -552,7 +553,8 @@ body::before{
         </div>
         <div class="grow">
           <div class="lbl">עוגנים שבועיים ותוכן</div>
-          <div class="bar b1" style="grid-column:2 / span 12">שלושה עד ארבעה עוגנים קבועים</div>
+          <div class="bar b5" style="grid-column:2 / span 5">יום עד יומיים בשבוע אירועים</div>
+          <div class="bar b1" style="grid-column:7 / span 7">שלושה עד ארבעה עוגנים קבועים</div>
         </div>
         <div class="grow">
           <div class="lbl">קהילות וספקים</div>
@@ -592,7 +594,8 @@ body::before{
         </div>
         <div class="grow">
           <div class="lbl">שותפויות ותקציבים</div>
-          <div class="bar b3" style="grid-column:3 / span 10">עירייה, אשכול, תל חי, מיגל, קרנות</div>
+          <div class="bar b4" style="grid-column:3 / span 6">בנייה: עירייה, מועצות, אשכול, תל חי, מיגל</div>
+          <div class="bar b3" style="grid-column:9 / span 5">שיתופי פעולה ותקציבים בפועל</div>
         </div>
         <div class="grow">
           <div class="lbl">הכנסות</div>
@@ -600,7 +603,7 @@ body::before{
         </div>
       </div>
     </div>
-    <p class="disclaim">הפסים המקווקווים הם עבודות הקמה. הפסים המלאים הם פעילות שוטפת. ההשקה של ההאב בחודש השלישי מותנית בכך שהתכנון מתחיל בשבוע הראשון.</p>
+    <p class="disclaim">הפסים המקווקווים הם עבודות הקמה ותהליכים שמתבשלים לאורך זמן. הפסים המלאים הם פעילות בפועל. שיתופי פעולה מול גופים ציבוריים לוקחים בין שישה לעשרה חודשים מרגע שמתחילים לעבוד עליהם, ולכן הם מופיעים כתהליך ארוך ולא כהבטחה מוקדמת.</p>
   </div>
 </section>
 
@@ -713,10 +716,10 @@ body::before{
       </div>
       <div class="card hot">
         <h4>מה משנה את התמונה</h4>
-        <ul class="plist"><li>עמדות עבודה ומנויים</li><li>שוכרים קבועים בהאב</li><li>הכשרות ותוכניות עומק</li><li>תקציבים ושותפים ציבוריים</li></ul>
+        <ul class="plist"><li>עמדות עבודה ומנויים</li><li>שוכרים קבועים בהאב</li><li>הכשרות ותוכניות עומק</li><li>תקציבים, שותפים ציבוריים ופילנתרופיה</li></ul>
       </div>
     </div>
-    <p class="disclaim">הטווחים מבוססים על היקפי הפעילות המתוארים ועל הנחת תפוסה זהירה. לא הנחתי הכנסה מתקציבים ציבוריים, והם יכולים לשנות את התמונה לטובה.</p>
+    <p class="disclaim">הטווחים מבוססים על היקפי הפעילות המתוארים ועל הנחת תפוסה זהירה. לא הנחתי הכנסה מתקציבים ציבוריים או מפילנתרופיה, והם יכולים לשנות את התמונה לטובה.</p>
   </div>
 </section>
 
@@ -750,7 +753,7 @@ body::before{
           <li>שוכרים קבועים ומשרדים בהאב</li>
           <li>אפליקציה מלאה למועדון החברים</li>
           <li>חבילות שנתיות לקהילות ולארגונים</li>
-          <li>תקציבים אזוריים ולאומיים כמקור קבוע</li>
+          <li>תקציבים אזוריים, לאומיים ופילנתרופיה כמקור קבוע</li>
           <li>הרחבת הצוות לפי ההכנסות, לא לפניהן</li>
         </ul>
       </div>
