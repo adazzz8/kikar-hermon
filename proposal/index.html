@@ -3,245 +3,459 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>כיכר חרמון · הצעת הפעלה</title>
+<title>הצעת הפעלה · כיכר חרמון</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-@page { size: A4; margin: 12mm 12mm 14mm; }
 :root{
   --a1:139,92,246; --a2:236,72,153;
-  --bg:#101028; --text:#F2F3FF; --muted:#A7AED4; --dim:#7A82B0;
-  --line:rgba(255,255,255,.12); --r:16px;
+  --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.20);
+  --text:#ECEEFF; --muted:#9BA2CC; --dim:#6E769F;
+  --maxw:1100px; --r:18px;
+  direction:rtl; text-align:right;
 }
+.acc-purple{--a1:139,92,246;--a2:236,72,153}
+.acc-blue  {--a1:59,130,246;--a2:99,102,241}
+.acc-teal  {--a1:20,184,166;--a2:34,197,94}
+.acc-indigo{--a1:99,102,241;--a2:168,85,247}
+.acc-green {--a1:34,197,94; --a2:22,163,74}
+.acc-cyan  {--a1:6,182,212; --a2:59,130,246}
+.acc-pink  {--a1:236,72,153;--a2:190,24,93}
+.acc-violet{--a1:167,139,250;--a2:99,102,241}
 *{box-sizing:border-box}
-html,body{margin:0}
+html{scroll-behavior:smooth}
+html{background-color:#0F0F23}
 body{
-  color:var(--text); background:#101028;
-  font-family:"Assistant","Heebo",Arial,sans-serif;
-  font-size:13.5px; line-height:1.45;
-  -webkit-font-smoothing:antialiased;
-  print-color-adjust:exact; -webkit-print-color-adjust:exact;
+  margin:0;color:var(--text);
+  background-color:#0F0F23;
+  font-family:"Assistant","Heebo",-apple-system,Arial,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-h1,h2,h3,h4{font-family:"Heebo",sans-serif;margin:0;letter-spacing:-.03em;line-height:1.15}
+h1,h2,h3,h4{font-family:"Heebo","Assistant",sans-serif;font-weight:800;line-height:1.14;margin:0;letter-spacing:-.022em}
 p{margin:0}
-.page{
-  width:186mm; margin:0 auto; padding:6px 0 10px;
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(135deg,#0F0F23 0%,#1A1A3E 48%,#0F0F23 100%);
 }
-.hero{
-  background:linear-gradient(135deg,rgba(var(--a1),.28),rgba(var(--a2),.12) 60%,transparent);
-  border:1px solid rgba(var(--a1),.35); border-radius:18px; padding:18px 20px 16px; margin-bottom:12px;
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:2}
+.sec{padding:84px 0;position:relative}
+.sec::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+   linear-gradient(165deg, rgba(var(--a1),.15), rgba(var(--a2),.09) 52%, transparent 88%),
+   radial-gradient(72% 54% at 86% -4%, rgba(var(--a1),.30), transparent 68%);
 }
-.tag{
-  display:inline-block; font-family:"Heebo",sans-serif; font-size:10.5px; font-weight:700;
-  letter-spacing:.08em; color:rgb(var(--a1));
-  border:1px solid rgba(var(--a1),.35); background:rgba(var(--a1),.1);
-  padding:4px 10px; border-radius:999px; margin-bottom:8px;
+.sec::after{
+  content:"";position:absolute;bottom:0;right:10%;left:10%;height:1px;z-index:1;
+  background:linear-gradient(90deg, transparent, rgba(var(--a1),.42), transparent);
 }
-.hero h1{font-size:34px; font-weight:900}
-.hero h1 span{
-  background:linear-gradient(120deg,#fff,rgb(var(--a1)) 55%,rgb(var(--a2)));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
+.sec:last-of-type::after{display:none}
+.eyebrow{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.2em;font-weight:700;color:rgb(var(--a2));margin-bottom:14px}
+.h2{font-size:clamp(27px,4.2vw,42px)}
+.lead{font-size:clamp(16.5px,2vw,19.5px);color:var(--muted);max-width:64ch;margin-top:14px;font-weight:300}
+.mt{margin-top:16px}.mt-l{margin-top:30px}
+
+/* כותרת */
+.hero{padding:96px 0 84px}
+.tagline{display:inline-flex;align-items:center;gap:9px;font-family:"Heebo",sans-serif;
+  font-size:12.5px;font-weight:600;letter-spacing:.04em;color:rgb(var(--a1));
+  border:1px solid rgba(var(--a1),.34);background:rgba(var(--a1),.09);padding:7px 16px;border-radius:999px}
+.tagline b{color:var(--muted);font-weight:400}
+.hero h1{font-size:clamp(38px,6.4vw,70px);font-weight:900;letter-spacing:-.04em;margin-top:22px;line-height:1}
+.hero h1 span{background:linear-gradient(120deg,#FFFFFF,rgb(var(--a1)) 52%,rgb(var(--a2)));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(18px,2.4vw,24px);color:var(--text);font-weight:300;margin-top:20px;max-width:42ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.fact{border:1px solid rgba(var(--a1),.30);border-radius:var(--r);padding:20px 20px;
+  background:linear-gradient(150deg,rgba(var(--a1),.14),rgba(255,255,255,.03))}
+.fact b{display:block;font-family:"Heebo",sans-serif;font-weight:900;font-size:26px;letter-spacing:-.02em}
+.fact span{display:block;font-size:14px;color:var(--muted);margin-top:5px}
+
+/* כרטיסים כלליים */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;
+  background:linear-gradient(155deg,rgba(var(--a1),.10),rgba(255,255,255,.032))}
+.card.hot{background:linear-gradient(150deg,rgba(var(--a1),.24),rgba(var(--a2),.09));
+  border-color:rgba(var(--a1),.44)}
+.card h3{font-size:20px;margin-bottom:9px}
+.card h4{font-size:14.5px;color:rgb(var(--a1));font-family:"Heebo",sans-serif;font-weight:700;margin-bottom:9px}
+.card p{font-size:15px;color:var(--muted)}
+.plist{list-style:none;padding:0;margin:0}
+.plist li{font-size:15px;color:var(--muted);padding:6px 17px 6px 0;position:relative;line-height:1.55}
+.plist li::before{content:"";position:absolute;right:0;top:14px;width:5px;height:5px;border-radius:50%;background:rgb(var(--a2))}
+.plist li b{color:var(--text);font-weight:600}
+
+/* למה אני */
+.proof{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.pf{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+  border:1px solid var(--line);border-radius:var(--r);padding:24px 24px;
+  background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
+.pf .n{font-family:"Heebo",sans-serif;font-weight:900;font-size:15px;color:rgb(var(--a1));
+  border:1px solid rgba(var(--a1),.36);border-radius:50%;width:38px;height:38px;
+  display:grid;place-items:center;flex:0 0 auto}
+.pf b{display:block;font-family:"Heebo",sans-serif;font-weight:800;font-size:19px;margin-bottom:7px}
+.pf p{font-size:15px;color:var(--muted);line-height:1.62}
+.pf p em{font-style:normal;color:var(--text);font-weight:600}
+
+/* צוות */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.member{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;
+  background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
+.member.lead{background:linear-gradient(150deg,rgba(var(--a1),.26),rgba(var(--a2),.10));
+  border-color:rgba(var(--a1),.46);box-shadow:0 0 70px -26px rgba(var(--a1),.5)}
+.member .role{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.16em;font-weight:700;color:var(--dim);margin-bottom:9px}
+.member h3{font-size:21px;margin-bottom:4px}
+.member .who{font-size:14px;color:rgb(var(--a1));font-weight:600;margin-bottom:12px}
+.member p{font-size:14.5px;color:var(--muted);flex:1}
+.member .out{margin-top:14px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.member .out b{color:var(--text);font-family:"Heebo",sans-serif;font-weight:700}
+.member .price{margin-top:16px;font-family:"Heebo",sans-serif;font-weight:900;font-size:30px;letter-spacing:-.02em}
+.member .per{font-size:13px;color:var(--muted);font-weight:400;margin-top:2px;font-family:"Assistant",sans-serif}
+.note-box{margin-top:18px;border:1px dashed rgba(var(--a1),.38);border-radius:var(--r);padding:20px 22px;
+  background:rgba(var(--a1),.06);font-size:15px;color:var(--muted);line-height:1.62}
+.note-box b{color:var(--text);font-weight:700;font-family:"Heebo",sans-serif}
+
+/* מספרים */
+.money{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:34px;align-items:start}
+.bill{border:1px solid rgba(var(--a1),.34);border-radius:var(--r);overflow:hidden;
+  background:linear-gradient(150deg,rgba(var(--a1),.15),rgba(255,255,255,.03))}
+.bill .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:16px 24px;border-bottom:1px solid var(--line);font-size:16px}
+.bill .row span{color:var(--muted)}
+.bill .row b{font-family:"Heebo",sans-serif;font-weight:700;font-size:19px;font-variant-numeric:tabular-nums}
+.bill .row.total{background:rgba(var(--a1),.16);border-bottom:0}
+.bill .row.total span{color:var(--text);font-weight:600}
+.bill .row.total b{font-size:27px;font-weight:900}
+.horizon{display:flex;flex-direction:column;gap:14px}
+.hz{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;
+  background:linear-gradient(155deg,rgba(var(--a2),.10),rgba(255,255,255,.03))}
+.hz b{display:block;font-family:"Heebo",sans-serif;font-weight:900;font-size:25px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hz span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
+
+/* ציר זמן */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.ph{border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;
+  background:linear-gradient(155deg,rgba(var(--a1),.11),rgba(255,255,255,.03))}
+.ph .when{font-family:"Heebo",sans-serif;font-weight:900;font-size:15px;color:rgb(var(--a1));letter-spacing:.02em;margin-bottom:6px}
+.ph h3{font-size:21px;margin-bottom:12px}
+.ph .res{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:14px;color:var(--text)}
+.kicker{margin-top:26px;border:1px solid rgba(var(--a1),.34);background:rgba(var(--a1),.09);
+  border-radius:var(--r);padding:22px 26px;font-family:"Heebo",sans-serif;font-weight:600;
+  font-size:clamp(17px,2.1vw,21px);line-height:1.45}
+.kicker.solid{background:linear-gradient(135deg,rgb(var(--a1)),rgb(var(--a2)));color:#fff;border-color:transparent}
+
+/* החלטות */
+.decide{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.dc{border:1px solid rgba(var(--a1),.36);border-radius:var(--r);padding:24px 22px;
+  background:linear-gradient(155deg,rgba(var(--a1),.16),rgba(255,255,255,.03))}
+.dc .n{font-family:"Heebo",sans-serif;font-weight:900;font-size:13px;color:rgb(var(--a1));letter-spacing:.14em;margin-bottom:9px}
+.dc b{display:block;font-family:"Heebo",sans-serif;font-size:19px;font-weight:800;margin-bottom:8px}
+.dc p{font-size:14.5px;color:var(--muted)}
+
+.foot{padding:44px 0 56px;font-size:14px;color:var(--muted);display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+.foot a{color:rgb(var(--a1));text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot .who{font-family:"Heebo",sans-serif;font-weight:700;color:var(--text);font-size:16px}
+
+@media (max-width:900px){
+  .sec{padding:58px 0}
+  .facts,.grid2,.grid3,.team,.phases,.decide,.money{grid-template-columns:1fr}
+  .pf{grid-template-columns:1fr;gap:12px}
 }
-.hero .lead{color:var(--muted); margin-top:6px; max-width:62ch; font-size:14.5px}
-.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
-.chips span{
-  font-family:"Heebo",sans-serif; font-size:11.5px; font-weight:700;
-  border:1px solid var(--line); border-radius:999px; padding:5px 10px;
-  background:rgba(255,255,255,.04)
-}
-.chips em{font-style:normal; color:rgb(var(--a1))}
-.sec{margin:12px 0 4px}
-.eyebrow{font-family:"Heebo",sans-serif; font-size:10px; letter-spacing:.18em; font-weight:800; color:rgb(var(--a2)); margin-bottom:4px}
-.h2{font-size:20px; margin-bottom:6px}
-.grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px}
-.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
-.panel{
-  background:rgba(255,255,255,.035); border:1px solid var(--line);
-  border-radius:var(--r); padding:11px 12px;
-}
-.panel.hot{background:linear-gradient(160deg,rgba(var(--a1),.26),rgba(var(--a2),.1)); border-color:rgba(var(--a1),.4)}
-.panel.yes{border-color:rgba(34,197,94,.38)}
-.panel.no{border-color:rgba(236,72,153,.32)}
-.panel h3{font-size:14.5px; margin-bottom:4px}
-.panel h4{font-size:11px; color:rgb(var(--a1)); margin-bottom:3px; font-weight:800; letter-spacing:.04em}
-.panel ul{margin:4px 0 0; padding:0 16px 0 0}
-.panel li{margin:3px 0; color:var(--muted)}
-.amount{font-family:"Heebo",sans-serif; font-size:22px; font-weight:900; margin-top:6px}
-.tiny{font-size:11px; color:var(--dim); margin-top:3px}
-.kicker{
-  margin-top:8px; padding:9px 12px; border-radius:12px;
-  background:rgba(var(--a1),.12); border:1px solid rgba(var(--a1),.28);
-  font-weight:700; font-size:13px;
-}
-.nums{
-  display:grid; grid-template-columns:1.15fr .85fr; gap:8px; margin-top:8px;
-}
-.big{
-  background:linear-gradient(150deg,rgba(var(--a1),.32),rgba(var(--a2),.12));
-  border:1px solid rgba(var(--a1),.45); border-radius:16px; padding:12px 14px;
-}
-.big .label{font-family:"Heebo",sans-serif; font-size:10px; letter-spacing:.14em; color:rgb(var(--a1)); font-weight:800}
-.big .sum{font-family:"Heebo",sans-serif; font-size:36px; font-weight:900; letter-spacing:-.04em; line-height:1}
-.big .sum small{font-size:.4em; color:var(--muted); font-weight:700}
-.row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line); font-size:13px}
-.row:last-of-type{border-bottom:0}
-.foot{margin-top:10px; text-align:center; color:var(--dim); font-size:11px}
-@media print{
-  body{background:#101028}
-  .page{width:auto}
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="hero">
-    <div class="tag">מסמך לפגישה · 1 בספטמבר 2026 · 10:00</div>
-    <h1>כיכר <span>חרמון</span></h1>
-    <p class="lead">הצעת הפעלה לשנה הראשונה. מי מנהל, מי בצוות, כמה זה עולה, ומה מקבלים תמורת הכסף.</p>
-    <div class="chips">
-      <span>אדם גרי · <em>מנהל המתחם</em></span>
-      <span>4 ימים בשבוע</span>
-      <span>24,000 ₪ לחודש</span>
-      <span>צוות של שניים לידו</span>
+<!-- ===== פתיחה ===== -->
+<section class="sec hero acc-purple">
+  <div class="wrap">
+    <div class="tagline">הצעת הפעלה <b>כיכר חרמון, קריית שמונה</b></div>
+    <h1>להפעיל את <span>כיכר חרמון</span></h1>
+    <p class="sub">מעטפת אנשים שמפעילה את המתחם: מנהל, קהילות והפקה. מתחילים בהנעה, בונים הרגל, ומגיעים למערכת שעובדת.</p>
+    <div class="facts">
+      <div class="fact"><b>4 ימים</b><span>נוכחות שלי בשבוע, בשעות שבהן המתחם חי</span></div>
+      <div class="fact"><b>3 אנשים</b><span>מנהל, קהילות והפקה בפועל</span></div>
+      <div class="fact"><b>40,000 ₪</b><span>מעטפת הפעלה חודשית מלאה</span></div>
     </div>
   </div>
+</section>
 
-  <div class="sec">
+<!-- ===== מה אתם מקבלים ===== -->
+<section class="sec acc-blue">
+  <div class="wrap">
+    <div class="eyebrow">מה אתם מקבלים</div>
+    <h2 class="h2">מתחם שקורה בו משהו, לא לוח אירועים</h2>
+    <p class="lead">התוצר אינו אירועים. התוצר הוא מקום שאנשים בעיר מגיעים אליו מתוך הרגל, ושאפשר להביא אליו אורח ולהראות לו שקורה כאן משהו.</p>
+    <div class="grid3">
+      <div class="card">
+        <h3>תוכן יומיומי</h3>
+        <p>שלושה עד ארבעה עוגנים שבועיים קבועים: למידה, כלים, שעות ייעוץ עם אנשי מקצוע, סדנאות, מוזיקה ותרבות מקומית.</p>
+      </div>
+      <div class="card">
+        <h3>קהילות שמביאות קהל</h3>
+        <p>קהילות מקומיות מקבלות בית ומארחות אצלכם. הן מביאות את האנשים ואת האמון שכבר יש להן, ואנחנו נותנים תשתית והפקה.</p>
+      </div>
+      <div class="card">
+        <h3>קפה עם סיבה להיות מלא</h3>
+        <p>התנועה שהתוכן מייצר מגיעה אל הקפה, גם בשעות שהיו מתות. הקפה נשאר בניהולכם ומרוויח מהמערכת.</p>
+      </div>
+    </div>
+    <div class="kicker">מקום שאפשר להביא אליו משפחה ששוקלת מעבר לקריית שמונה, ולהראות לה במקום לספר לה.</div>
+  </div>
+</section>
+
+<!-- ===== למה אני ===== -->
+<section class="sec acc-teal">
+  <div class="wrap">
+    <div class="eyebrow">למה אני</div>
+    <h2 class="h2">אני לא מגיע מהמרכז לעשות פרויקט בצפון</h2>
+    <p class="lead">אני כבר כאן, בתוך האקוסיסטם הזה, ועם רקע של קרוב לעשרים שנה בהקמה והפעלה של מקומות שמייצרים פעילות.</p>
+
+    <div class="proof">
+      <div class="pf">
+        <div class="n">01</div>
+        <div>
+          <b>אני כבר עובד עם השותפים של הפרויקט הזה</b>
+          <p>היום אני מנהל תיק מיזמים ב־<em>GAIA Partners</em> בקריית שמונה, מרכז החדשנות של Margalit Startup City יחד עם JVP, מיגל, תל חי והרשות לחדשנות. בניתי שיתופי פעולה עם <em>אשכול גליל מזרחי, עיריית קריית שמונה ומשרד העבודה</em>, ואני מקדם יוזמה למרכז חדשנות רפואי בעיר בשיתוף כללית. הגופים שמופיעים ברשימת השותפים של כיכר חרמון הם האנשים שאני יושב איתם ממילא.</p>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="n">02</div>
+        <div>
+          <b>כבר הפעלתי מרחב פיזי בצפון</b>
+          <p>הייתי סמנכ״ל פיתוח עסקי ב<em>הכוורת בגינוסר</em>, מרחב העבודה המשותפת הראשון באזור הכנרת. בניתי שם את השם, המותג והמיתוג, ואת שיתופי הפעולה מול עסקים, ארגונים וראשי מועצות. בהמשך הקמתי את <em>WorkZones</em>, תוכנית שמביאה חברות טכנולוגיה מהמרכז לימי עבודה בצפון.</p>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="n">03</div>
+        <div>
+          <b>בניתי חמישה אקסלרטורים ושני מרכזי חדשנות</b>
+          <p>בקפלן ובהרצפלד הקמתי מערך חדשנות מאפס שהוכר כמודל בכללית, כולל שבוע חדשנות שלם ותוכניות שבהן עשרות אנשי צוות עברו מרעיון לאב טיפוס. לפני כן ניהלתי שני אקסלרטורים של מעוף טק במקביל, והקמתי אקסלרטור בינלאומי בתל אביב עם שנים עשר צוותים ממזרח אירופה. <em>זו בדיוק העבודה: לבנות תוכן, לגייס מרצים ומנטורים, ולהחזיק לוח שרץ שבוע אחרי שבוע.</em></p>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="n">04</div>
+        <div>
+          <b>אני יודע להביא תקציבים, לא רק להוציא</b>
+          <p>גייסתי <em>18 מיליון ₪</em> מהרשות לחדשנות למאיץ קפלן, אריאל ו־HIT, <em>350 אלף ₪</em> מכללית אינוביישן, ומעל מיליון דולר לסטארטאפים שהקמתי. אני מכיר קולות קוראים, מענקים ומנגנוני מימון מבוססי אבני דרך. חלק מהמעטפת הזו יכול לחזור דרך תקציבים אזוריים ולאומיים, ואני יודע איפה הם ואיך ניגשים אליהם.</p>
+        </div>
+      </div>
+      <div class="pf">
+        <div class="n">05</div>
+        <div>
+          <b>אני רתום לצפון כבר שנים</b>
+          <p>העבודה שלי בשנים האחרונות היא בגליל: מיזמים צפוניים, מפעלים אזוריים, תוכניות הכשרה, מפגשי משקיעים, וקידום מהלכים מול הרשויות. <em>זה לא פרויקט שאני עושה מרחוק. זו הסביבה שבחרתי לעבוד ולחיות בה.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== התפקיד ===== -->
+<section class="sec acc-indigo">
+  <div class="wrap">
     <div class="eyebrow">התפקיד</div>
-    <h2 class="h2">מנהל ומפקח. נוכח בשטח. לא המפיק.</h2>
-    <p style="color:var(--muted);margin-bottom:8px">אני מביא את החזון, בונה את המערכת, שומר על הסטנדרט, ומזיז את האנשים הנכונים. אני שם בהרבה מהדברים. אני לא האיש שסוגר מרצה ביום חמישי בערב.</p>
+    <h2 class="h2">מנהל המתחם, אחראי לתוצאה</h2>
+    <p class="lead">אני בונה את המערכת, אוצר את התוכן, מחזיק את הסטנדרט ומזיז את האנשים הנכונים. הצוות מבצע, ואני אחראי לכך שזה קורה.</p>
     <div class="grid2">
-      <div class="panel yes">
-        <h3>כן, זה אני</h3>
-        <ul>
-          <li>חזון, כיוון וסטנדרט לכל המתחם</li>
-          <li>מודל הפעלה: Freemium, 90 יום, תוכן יומיומי</li>
-          <li>אוצרות התוכן: מה קורה פה, ולמה</li>
-          <li>חיבור שותפים וקהילות ברמה האסטרטגית</li>
-          <li>גיוס וניהול הצוות, יעדים ומספרים</li>
-          <li>פיקוח על הקפה והבר, בלי לנהל משמרות</li>
-          <li>נוכחות בשטח בארבעה ימים קבועים</li>
+      <div class="card">
+        <h4>אסטרטגיה וכיוון</h4>
+        <ul class="plist">
+          <li>החזון והמיצוב: מה המקום הזה, ולמי</li>
+          <li>אוצרות התוכן: מה קורה כאן, מתי ובשביל מי</li>
+          <li>בניית מערכת ההפעלה: קהילות, ספקים, לוח אירועים ומועדון חברים</li>
+          <li>המודל הכלכלי והדרך אל הכנסות</li>
         </ul>
       </div>
-      <div class="panel no">
-        <h3>לא, בשביל זה יש צוות</h3>
-        <ul>
-          <li>הפקה בפועל של אירועים</li>
-          <li>שיחות שוטפות עם מרצים ומנטורים על לו״ז</li>
-          <li>ניהול משמרות, מלאי, קופה וספקים של הקפה</li>
-          <li>עמידה מאחורי הדלפק</li>
+      <div class="card">
+        <h4>שטח, אנשים ותקציב</h4>
+        <ul class="plist">
+          <li>שותפויות מול העירייה, האשכול, תל חי, מיגל וגופים אזוריים</li>
+          <li>גיוס תקציבים, מענקים וקולות קוראים</li>
+          <li>גיוס הצוות, הצבת יעדים וניהול מול מספרים</li>
+          <li>הסטנדרט של המקום: איך הוא נראה, מרגיש ומתפקד</li>
+          <li>נוכחות בשטח ארבעה ימים בשבוע</li>
         </ul>
-        <p class="tiny" style="margin-top:8px">ארבעה ימים בשבוע במתחם. מספיק שהמערכת תרוץ, בלי שאני הופך לעובד הקפה.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sec">
+<!-- ===== הצוות ===== -->
+<section class="sec acc-cyan">
+  <div class="wrap">
     <div class="eyebrow">הצוות</div>
-    <h2 class="h2">שניים לידי. הקפה נשאר אצלכם.</h2>
-    <div class="grid3" style="margin-top:8px">
-      <div class="panel hot">
-        <h4>01 · אדם גרי</h4>
+    <h2 class="h2">שלושה אנשים, כל אחד עם תוצר מדיד</h2>
+    <p class="lead">צוות רזה שמספיק כדי להפעיל מערכת, ולא כדי לנהל ארגון.</p>
+
+    <div class="team">
+      <div class="member lead">
+        <div class="role">01 · ניהול</div>
         <h3>מנהל המתחם</h3>
-        <p>4 ימים בשבוע. חזון, פיקוח, אוצרות, שותפים, צוות. נוכח בשטח.</p>
-        <div class="amount">24,000 ₪</div>
-        <p class="tiny">לחודש</p>
+        <div class="who">אדם גריי</div>
+        <p>חזון, אוצרות תוכן, מערכת הפעלה, שותפויות, תקציבים וניהול הצוות. ארבעה ימים בשבוע בשטח.</p>
+        <div class="out"><b>התוצר:</b> מערכת שרצה, שותפים שמחוברים, וצוות שעומד ביעדים.</div>
+        <div class="price">24,000 ₪<div class="per">לחודש · ארבעה ימים בשבוע</div></div>
       </div>
-      <div class="panel">
-        <h4>02 · ישראל</h4>
+
+      <div class="member">
+        <div class="role">02 · קהילות</div>
         <h3>קהילות וחיבורים</h3>
-        <p>יומיים בשבוע, עד שלושה לפי הצורך. מביא קהילות ואנשים. עובד מול תוצאות: קהילות פעילות, אנשים שהגיעו, עוגנים שרצים.</p>
-        <div class="amount">8,000 ₪</div>
-        <p class="tiny">לחודש · יומיים, עם אפשרות לשלושה</p>
+        <div class="who">ישראל</div>
+        <p>מביא קהילות ואנשים, בונה את החיבורים בשטח ומחזיק את הקשר השוטף מול הקהילות המקומיות.</p>
+        <div class="out"><b>התוצר:</b> כמה קהילות פעילות, כמה אנשים הגיעו, כמה עוגנים רצים בפועל.</div>
+        <div class="price">8,000 ₪<div class="per">לחודש · יומיים בשבוע, עד שלושה לפי הצורך</div></div>
       </div>
-      <div class="panel">
-        <h4>03 · מפיק או מפיקה</h4>
+
+      <div class="member">
+        <div class="role">03 · הפקה</div>
         <h3>הפקה בפועל</h3>
-        <p>חמישה ימים, גמיש בין יום לערב. אירועים, מרצים, מנטורים, תיאום תוכן מול הקפה, סטודנטים ועובדים בשטח.</p>
-        <div class="amount">8,000 ₪</div>
-        <p class="tiny">לחודש · טווח 7–9 אלף. בגיוס חזק עד 11</p>
+        <div class="who">מפיק או מפיקה</div>
+        <p>עושה שהאירועים קורים: מרצים, מנטורים, ספקים, לוגיסטיקה, ותיאום התוכן מול הקפה. גמיש בין יום לערב.</p>
+        <div class="out"><b>התוצר:</b> לוח שרץ בלי תקלות, מרצים שמגיעים, אירועים שקורים בזמן.</div>
+        <div class="price">8,000 ₪<div class="per">לחודש · חמישה ימים · טווח 7 עד 9, ולגיוס חזק במיוחד עד 11</div></div>
       </div>
     </div>
-    <div class="kicker">ניהול הקפה והבר בפועל לא בצוות שלי ולא בתקציב הזה. אתם תכננתם קפה ממילא. המפיקה מתאמת מולו תוכן, אני מפקח על הסטנדרט, התפעול היומיומי נשאר אצלכם.</div>
-  </div>
 
-  <div class="sec">
+    <div class="note-box">
+      <b>הקפה נשאר בניהול שלכם</b>, בדיוק כמו שתכננתם ממילא. אנחנו מזרימים אליו תנועה יומיומית ומתאמים מולו את התוכן, כך שהוא מרוויח מהמערכת בלי שתשלמו על שכבת ניהול נוספת.
+    </div>
+  </div>
+</section>
+
+<!-- ===== המנוע ===== -->
+<section class="sec acc-green">
+  <div class="wrap">
+    <div class="eyebrow">המנוע</div>
+    <h2 class="h2">התוכן מגיע בברטר, ולכן הוא אפשרי כל יום</h2>
+    <p class="lead">מרצה, מנטור, עורך דין, רואה חשבון, מגייסת, יקב או מוזיקאי נותנים ערך, ומקבלים בתמורה קהל מדויק, חשיפה ואמון. זה הבסיס שמאפשר תוכן יומיומי בתקציב הזה.</p>
+    <div class="grid2">
+      <div class="card hot">
+        <h4>מה זה אומר בפועל</h4>
+        <p>הכסף שלכם הולך למעטפת האנשים שמפעילה את המערכת, ולא לרכישת תוכן. זה ההבדל בין מקום שיש בו תוכן כל שבוע, לבין מקום שעושה אירוע כשמתפנה תקציב.</p>
+      </div>
+      <div class="card">
+        <h4>למה ספק בכלל מסכים</h4>
+        <p>כי הוא לא מתנדב. הוא פוגש את הקהל שלו בסביבה שבונה אמון מהר יותר מפרסומת, ויוצא משם עם לידים, נוכחות ותוכן. ככל שהמקום חי יותר, קל יותר להביא ספקים טובים.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== המספרים ===== -->
+<section class="sec acc-pink">
+  <div class="wrap">
     <div class="eyebrow">המספרים</div>
-    <h2 class="h2">40 אלף לחודש. 120 אלף ל־90 יום. 480 אלף לשנה.</h2>
-    <p style="color:var(--muted)">מעטפת האנשים שמפעילה את החיים במתחם. בלי שכירות, בלי שיפוץ, בלי משכורות הקפה. התוכן עצמו כמעט לא עולה כסף: הוא מגיע בברטר מספקים.</p>
-    <div class="nums">
-      <div class="big">
-        <div class="label">מעטפת הפעלה חודשית</div>
-        <div class="sum">40,000 <small>₪</small></div>
-        <div class="row"><b>אדם · מנהל המתחם</b><span>24,000</span></div>
-        <div class="row"><b>ישראל · קהילות</b><span>8,000</span></div>
-        <div class="row"><b>מפיק/ה בפועל</b><span>8,000</span></div>
-        <p class="tiny">אם המפיק/ה תהיה גיוס חזק במיוחד, השורה הזו יכולה לעלות עד 11,000. אז המעטפת החודשית היא 43,000, והשנה 516,000.</p>
+    <h2 class="h2">מעטפת הפעלה, לא תקציב מתחם</h2>
+    <p class="lead">זו העלות של האנשים שמפעילים את החיים במקום. לא כלולים בה שכירות, שיפוץ, ציוד ומשכורות הקפה.</p>
+
+    <div class="money">
+      <div class="bill">
+        <div class="row"><span>אדם גריי · מנהל המתחם</span><b>24,000 ₪</b></div>
+        <div class="row"><span>ישראל · קהילות וחיבורים</span><b>8,000 ₪</b></div>
+        <div class="row"><span>מפיק או מפיקה · הפקה בפועל</span><b>8,000 ₪</b></div>
+        <div class="row total"><span>מעטפת חודשית</span><b>40,000 ₪</b></div>
       </div>
-      <div>
-        <div class="panel hot" style="margin-bottom:8px">
-          <h4>90 יום · Proof of Life</h4>
-          <div class="amount">120,000 ₪</div>
-          <p class="tiny">קפה פתוח, 3–4 עוגנים שבועיים, קהילות ראשונות, ספקים ראשונים, לוח בסיסי ומועדון חברים פשוט.</p>
-        </div>
-        <div class="panel">
-          <h4>שנה ראשונה</h4>
-          <div class="amount">480,000 ₪</div>
-          <p class="tiny">12 חודשים של הצוות הזה. עדיין בלי קפה ובלי המקום עצמו.</p>
-        </div>
+      <div class="horizon">
+        <div class="hz"><b>120,000 ₪</b><span>שלושת החודשים הראשונים, שלב ההנעה</span></div>
+        <div class="hz"><b>480,000 ₪</b><span>שנה מלאה של המעטפת הזו</span></div>
+        <div class="hz" style="border-style:dashed"><b>43,000 ₪</b><span>אם ההפקה תהיה גיוס חזק במיוחד. שנה: 516,000 ₪</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sec">
-    <div class="eyebrow">מה מקבלים</div>
-    <h2 class="h2">קודם חיים. אחר כך מערכת.</h2>
-    <div class="grid2" style="margin-top:8px">
-      <div class="panel">
-        <h3>90 הימים הראשונים</h3>
-        <ul>
-          <li>פותחים את הקפה כבסיס פעיל</li>
-          <li>שלושה עד ארבעה עוגנים קבועים בשבוע</li>
-          <li>שלוש עד ארבע קהילות מארחות</li>
+<!-- ===== לוח זמנים ===== -->
+<section class="sec acc-violet">
+  <div class="wrap">
+    <div class="eyebrow">לוח זמנים</div>
+    <h2 class="h2">מקום לא מתמלא בתשעים יום</h2>
+    <p class="lead">בתשעים יום מוכיחים שהמנוע עובד. את ההרגל בונים על פני חצי שנה, ואת המערכת השלמה על פני שנה. זו הדרך שבה מקומות כאלה באמת נבנים.</p>
+
+    <div class="phases">
+      <div class="ph">
+        <div class="when">חודשים 1 עד 3</div>
+        <h3>הנעה</h3>
+        <ul class="plist">
+          <li>הקפה פועל כבסיס</li>
+          <li>שלושה עד ארבעה עוגנים מוגדרים ורצים</li>
+          <li>קהילות ראשונות מארחות</li>
           <li>ספקים ומנטורים ראשונים</li>
-          <li>לוח אירועים והרשמה פשוטים</li>
+          <li>לוח אירועים והרשמה</li>
           <li>מועדון חברים בסיסי</li>
-          <li>פיילוט או שניים בהאב הגדול</li>
         </ul>
+        <div class="res">בסוף התקופה יש פעילות אמיתית, והיא עדיין נבנית.</div>
       </div>
-      <div class="panel">
-        <h3>עד סוף השנה</h3>
-        <ul>
-          <li>שני המתחמים עובדים יחד: כיכר והאב</li>
-          <li>קהילות קבועות, לא אירוע חד־פעמי</li>
-          <li>ספקים שחוזרים כי הם פוגשים קהל</li>
-          <li>תוכניות עומק בהאב</li>
+      <div class="ph">
+        <div class="when">חודשים 4 עד 6</div>
+        <h3>הרגל</h3>
+        <ul class="plist">
+          <li>העוגנים הופכים לקבועים בתודעה</li>
+          <li>אנשים מגיעים בלי לבדוק את הלוח</li>
+          <li>חמש עד עשר קהילות פעילות</li>
+          <li>ספקים שחוזרים מיוזמתם</li>
+          <li>הכנסות ראשונות מתוכן ומחללים</li>
+        </ul>
+        <div class="res">כאן המקום מתחיל להיות מוכר בעיר.</div>
+      </div>
+      <div class="ph">
+        <div class="when">חודשים 7 עד 12</div>
+        <h3>מערכת</h3>
+        <ul class="plist">
+          <li>הכיכר וההאב עובדים יחד</li>
+          <li>תוכניות עומק והכשרות בהאב</li>
           <li>חבילות לקהילות ולארגונים</li>
-          <li>מודל הכנסות מעל הפרימיום החינמי</li>
+          <li>שותפים אסטרטגיים ותקציבים אזוריים</li>
+          <li>מודל הכנסות רב שכבתי</li>
         </ul>
+        <div class="res">המקום כבר לא תלוי באירוע בודד או באדם בודד.</div>
       </div>
     </div>
-    <div class="grid3" style="margin-top:8px">
-      <div class="panel"><h4>אחרי חודש</h4><p>קפה פעיל, לוח, שני עוגנים, שלוש קהילות במגע.</p></div>
-      <div class="panel"><h4>אחרי 90 יום</h4><p>עוגנים קבועים, 5–10 קהילות, ספקים שחוזרים, הכנסות ראשונות.</p></div>
-      <div class="panel"><h4>אחרי שנה</h4><p>קמפוס קטן שרץ, שותפים אסטרטגיים, הכנסה שלא תלויה באירוע בודד.</p></div>
+  </div>
+</section>
+
+<!-- ===== החלטות ===== -->
+<section class="sec acc-purple">
+  <div class="wrap">
+    <div class="eyebrow">מה צריך להחליט</div>
+    <h2 class="h2">שלוש החלטות, ואפשר להתחיל</h2>
+    <div class="decide">
+      <div class="dc">
+        <div class="n">החלטה 01</div>
+        <b>התפקיד</b>
+        <p>אדם גריי כמנהל המתחם, ארבעה ימים בשבוע, 24,000 ₪ לחודש.</p>
+      </div>
+      <div class="dc">
+        <div class="n">החלטה 02</div>
+        <b>הצוות</b>
+        <p>ישראל לקהילות ב־8,000 ₪, מפיק או מפיקה בפועל ב־8,000 ₪. הקפה נשאר אצלכם.</p>
+      </div>
+      <div class="dc">
+        <div class="n">החלטה 03</div>
+        <b>המסגרת</b>
+        <p>מעטפת של 40,000 ₪ לחודש, שמתחילה בשלושה חודשי הנעה.</p>
+      </div>
+    </div>
+    <div class="kicker solid">מתחילים קטן, מוכיחים שהמנוע עובד, ואז בונים מערכת. תכלס.</div>
+  </div>
+</section>
+
+<div class="wrap acc-purple">
+  <div class="foot">
+    <div>
+      <div class="who">אדם גריי</div>
+      <div>יזם, בונה מיזמים ומנהל תיק מיזמים · גליל עליון</div>
+    </div>
+    <div>
+      <a href="tel:0544708358">054-4708358</a> · <a href="mailto:adamgrey.com@gmail.com">adamgrey.com@gmail.com</a><br>
+      <a href="https://adazzz8.github.io/kikar-hermon/">התוכנית המלאה של כיכר חרמון</a>
     </div>
   </div>
-
-  <div class="sec">
-    <div class="eyebrow">מה מבקשים מחר</div>
-    <h2 class="h2">שלוש החלטות. בלי כל התשובות.</h2>
-    <div class="grid3" style="margin-top:8px">
-      <div class="panel hot"><h3>1. התפקיד</h3><p>אדם כמנהל המתחם, 4 ימים, 24,000 ₪ לחודש. לא מפיק, לא ברמן.</p></div>
-      <div class="panel"><h3>2. הצוות</h3><p>ישראל לקהילות ב־8,000. מפיק/ה בפועל סביב 8,000. הקפה אצלכם.</p></div>
-      <div class="panel"><h3>3. המסגרת</h3><p>120,000 ₪ ל־90 יום של Proof of Life, ואז שנה ב־480,000 למעטפת האנשים.</p></div>
-    </div>
-    <div class="kicker">מתחילים קטן, מוכיחים חיים, ואז בונים מערכת. תכלס.</div>
-  </div>
-
-  <div class="foot">כיכר חרמון · קריית שמונה · מסמך לפגישה עם שני · 1.9.2026</div>
 </div>
+
 </body>
 </html>
