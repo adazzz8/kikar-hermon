@@ -222,7 +222,7 @@ body::before{
   border-right:2px solid rgba(var(--a1),.5);padding-right:14px}
 
 /* ===== רמפת הכנסות ===== */
-.ramp{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:32px}
+.ramp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
 .rp{border:1px solid var(--line);border-radius:14px;padding:18px 16px;
   background:linear-gradient(160deg,rgba(34,197,94,.13),rgba(255,255,255,.03))}
 .rp .mo{font-family:"Heebo",sans-serif;font-size:11.5px;letter-spacing:.1em;font-weight:700;color:#4ADE80;margin-bottom:7px}
@@ -243,10 +243,24 @@ body::before{
 .vr h3{font-size:23px;margin-bottom:10px}
 .vr > p{font-size:15px;color:var(--muted);margin-bottom:14px}
 
+
+.qtbl .th, .qtbl .tr, .qtbl .sum{grid-template-columns:1.8fr repeat(5,1fr);gap:10px}
+.qtbl .num{text-align:left;font-family:"Heebo",sans-serif;font-weight:700;font-variant-numeric:tabular-nums;font-size:14.5px}
+.qtbl .num.tot{color:rgb(var(--a1));font-weight:900}
+.qtbl .sum .num{font-size:16px}
+.qtbl .sum .num.tot{font-size:19px}
+@media (max-width:900px){
+  .qtbl{overflow-x:auto}
+  .qtbl .th{display:grid}
+  .qtbl .th, .qtbl .tr, .qtbl .sum{grid-template-columns:1.6fr repeat(5,minmax(64px,1fr));min-width:640px}
+  .qtbl .tr span{grid-column:auto}
+}
+
 @media (max-width:900px){
   .venue-body,.vers{grid-template-columns:1fr}
   .vcol + .vcol{border-right:0;border-top:1px solid var(--line)}
-  .ramp{grid-template-columns:1fr 1fr}
+  .ramp{grid-template-columns:1fr}
+  .ramp .rp{grid-column:auto !important}
   .tbl .th{display:none}
   .tbl .tr,.tbl .sum{grid-template-columns:1fr auto;gap:6px}
   .tbl .tr span{grid-column:1 / -1}
@@ -268,7 +282,7 @@ body::before{
   <div class="wrap">
     <div class="tagline">הצעת הפעלה <b>כיכר חרמון, קריית שמונה</b></div>
     <h1>להפעיל את <span>כיכר חרמון</span></h1>
-    <p class="sub">להפעיל את הכיכר והקפה מהיום הראשון, ובמקביל להקים ולפתוח את ההאב הגדול. שנה אחת, שני מתחמים, מערכת אחת.</p>
+    <p class="sub">בית קפה חברתי, כיכר פעילה והאב הכשרה. מקום שמחבר תושבים, קהילות, מעסיקים ומחפשי עבודה, ופועל כל יום.</p>
     <div class="facts">
       <div class="fact"><b>4 ימים</b><span>נוכחות שלי בשבוע, בשעות שבהן המתחם חי</span></div>
       <div class="fact"><b>3 אנשים</b><span>מנהל, קהילות והפקה בפועל</span></div>
@@ -282,7 +296,7 @@ body::before{
   <div class="wrap">
     <div class="eyebrow">מה אתם מקבלים</div>
     <h2 class="h2">מתחם שקורה בו משהו, לא לוח אירועים</h2>
-    <p class="lead">התוצר אינו אירועים. התוצר הוא מקום שאנשים בעיר מגיעים אליו מתוך הרגל, ושאפשר להביא אליו אורח ולהראות לו שקורה כאן משהו.</p>
+    <p class="lead">התוצר אינו אירועים. התוצר הוא מקום שאנשים בעיר מגיעים אליו מתוך הרגל: תושבים, משפחות, נוער, חיילים משוחררים, סטודנטים, עובדים ומעסיקים. מקום שאפשר להביא אליו אורח ולהראות לו שקורה כאן משהו.</p>
     <div class="grid3">
       <div class="card">
         <h3>תוכן יומיומי</h3>
@@ -293,8 +307,12 @@ body::before{
         <p>קהילות מקומיות מקבלות בית ומארחות אצלכם. הן מביאות את האנשים ואת האמון שכבר יש להן, ואנחנו נותנים תשתית והפקה.</p>
       </div>
       <div class="card">
-        <h3>קפה עם סיבה להיות מלא</h3>
-        <p>התנועה שהתוכן מייצר מגיעה אל הקפה, גם בשעות שהיו מתות. הקפה נשאר בניהולכם ומרוויח מהמערכת.</p>
+        <h3>בית קפה חברתי</h3>
+        <p>לא בית קפה מסחרי רגיל. מחירים נגישים, הנחה לחברי קהילה, סטודנטים שעובדים בו, ומקום שמי שאין לו כיס עמוק עדיין יכול לשבת בו. הקפה הוא השער, ולכן הוא חייב להיות פתוח לכולם.</p>
+      </div>
+      <div class="card hot">
+        <h3>תעסוקה וחיבור לעבודה</h3>
+        <p>מפגש שבועי בין מחפשי עבודה למעסיקים אזוריים, הכשרות מקצועיות, וליווי בקורות חיים ובראיונות. זה המנוע שגם מביא תקציב.</p>
       </div>
     </div>
     <div class="kicker">מקום שאפשר להביא אליו משפחה ששוקלת מעבר לקריית שמונה, ולהראות לה במקום לספר לה.</div>
@@ -360,6 +378,7 @@ body::before{
         <ul class="plist">
           <li>החזון והמיצוב: מה המקום הזה, ולמי</li>
           <li>אוצרות התוכן: מה קורה כאן, מתי ובשביל מי</li>
+            <li>תוכנית התעסוקה: הכשרות, מעסיקים וחיבור לעבודה</li>
           <li>בניית מערכת ההפעלה: קהילות, ספקים, לוח אירועים ומועדון חברים</li>
           <li>המודל הכלכלי והדרך אל הכנסות</li>
         </ul>
@@ -440,6 +459,91 @@ body::before{
 </section>
 
 
+
+<!-- ===== תעסוקה ===== -->
+<section class="sec acc-emerald" id="jobs">
+  <div class="wrap">
+    <div class="eyebrow">מנוע מרכזי</div>
+    <h2 class="h2">תעסוקה, הכשרה וחיבור בין מעסיקים למחפשי עבודה</h2>
+    <p class="lead">זו לא פעילות נלווית, זה אחד המנועים של המקום. בקריית שמונה השאלה המעשית ביותר היא איפה עובדים ואיך מתקדמים. הכיכר הופכת לנקודה שבה מחפש עבודה ומעסיק נפגשים באותו חלל, בלי תיווך ובלי ועדה.</p>
+
+    <div class="grid3">
+      <div class="card">
+        <h4>למי זה מיועד</h4>
+        <ul class="plist">
+          <li><b>חיילים משוחררים</b> בשנה שאחרי, שעדיין לא יודעים לאן</li>
+          <li><b>סטודנטים ובוגרי תל חי</b> שרוצים להישאר באזור</li>
+          <li><b>נוער</b> בכיתות י עד יב, חשיפה למקצועות ולעולם העבודה</li>
+          <li><b>תושבים בגיל העבודה</b> שמחפשים או רוצים להחליף</li>
+          <li><b>הורים</b> שחוזרים לשוק אחרי הפסקה</li>
+          <li><b>עובדים מרחוק</b> שרוצים מקום ואנשים</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>מה מקבל מי שמחפש עבודה</h4>
+        <ul class="plist">
+          <li>קורות חיים ולינקדאין שמתוקנים במקום</li>
+          <li>הכנה לראיונות ותרגול מול אנשי מקצוע</li>
+          <li>פגישה עם מגייסת בלי לשלוח מאה קורות חיים</li>
+          <li>מיפוי מסלול: לאיזה תפקיד בכלל להתכוון</li>
+          <li>היכרות ישירה עם מעסיקים מהאזור</li>
+        </ul>
+      </div>
+      <div class="card hot">
+        <h4>מה מקבל המעסיק</h4>
+        <ul class="plist">
+          <li>גישה לקהל מקומי רלוונטי במקום אחד</li>
+          <li>מפגשי גיוס בלי עלות תיווך</li>
+          <li>מיתוג מעסיק מול הקהילה</li>
+          <li>קיצור זמן הגיוס ואיתור מועמדים מהסביבה</li>
+          <li>השפעה על תוכן ההכשרות, כך שיתאימו לצרכים שלו</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>מה מקבלת העיר</h4>
+        <ul class="plist">
+          <li>אנשים שנשארים כי מצאו עבודה</li>
+          <li>משפחות ששוקלות מעבר ורואות תעסוקה בפועל</li>
+          <li>סטודנטים מתל חי שנשארים באזור אחרי התואר</li>
+          <li>מדד ברור להצלחה: כמה אנשים התקבלו לעבודה</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="gains-title">מה קורה בפועל, כל שבוע</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4>פעילות שוטפת בכיכר</h4>
+        <ul class="plist">
+          <li><b>שולחן קריירה שבועי:</b> קורות חיים, לינקדאין והכנה לראיונות</li>
+          <li><b>מגייסת בשטח:</b> שעות קבלה קבועות, פגישות של רבע שעה</li>
+          <li><b>ערב מעסיקים:</b> חברה אזורית מציגה תפקידים פתוחים ופוגשת מועמדים</li>
+          <li><b>מפגשי מקצוע:</b> איך באמת נכנסים לתחום, כל פעם תחום אחר</li>
+          <li><b>מועדון עבודה מרחוק:</b> לתושבים שעובדים לחברות מהמרכז</li>
+          <li><b>מסלול לחיילים משוחררים:</b> מה עושים בשנה שאחרי, בליווי אישי</li>
+          <li><b>אחר הצהריים לנוער:</b> חשיפה למקצועות, כלים דיגיטליים ומפגש עם אנשי מקצוע</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>הכשרות מקצועיות בהאב</h4>
+        <ul class="plist">
+          <li>מסלולים קצרים של שלושה עד שישה מפגשים</li>
+          <li>AI וכלים דיגיטליים לעבודה</li>
+          <li>שיווק, מכירות, פרילנס וניהול עסק קטן</li>
+          <li>תוכן שנבנה מול הביקוש של מעסיקים אזוריים</li>
+          <li>שיתוף עם תל חי, מיגל ומעסיקים בבניית התוכן</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="kicker">המדד שאני רוצה להימדד בו: כמה אנשים מצאו עבודה, כמה מעסיקים חזרו, וכמה בוגרי הכשרה נקלטו.</div>
+
+    <div class="note-box">
+      <b>וזה גם הסעיף שהכי קל לממן.</b> תעסוקה והכשרה הם יעד מוצהר של משרד העבודה, אשכול גליל מזרחי, העירייה וגופי פילנתרופיה. תוכנית תעסוקה עם מדדים ברורים היא בדיוק מה שגופים כאלה מחפשים לממן, ובניגוד לתוכן כללי, יש לה מספרים שאפשר לדווח עליהם.
+    </div>
+  </div>
+</section>
+
 <!-- ===== מתחם 1 ===== -->
 <section class="sec acc-cyan" id="venue1">
   <div class="wrap">
@@ -451,7 +555,7 @@ body::before{
       <div class="venue-head">
         <div>
           <div class="tag">פועל מחודש 1</div>
-          <h3>קפה, רחבה מקורה וכיכר פתוחה</h3>
+          <h3>בית קפה חברתי, רחבה מקורה וכיכר פתוחה</h3>
         </div>
         <div class="stat"><b>חודש 1</b><span>מתחילים לפעול ולהכניס</span></div>
       </div>
@@ -459,13 +563,16 @@ body::before{
         <div class="vcol">
           <h4>מה קורה שם</h4>
           <ul class="plist">
+            <li>בית קפה חברתי: מחירים נגישים והנחה לחברי קהילה</li>
             <li>קפה, אוכל קל ובר ערב</li>
+            <li>שולחן קריירה ומפגשי מעסיקים</li>
             <li>עבודה לא פורמלית, פגישות וסטודנטים</li>
             <li>שלושה עד ארבעה עוגנים שבועיים</li>
             <li>שעות קבלה עם אנשי מקצוע</li>
             <li>ערבי קהילה מארחת</li>
             <li>הופעות קטנות, מוזיקה ותרבות מקומית</li>
             <li>שוק יוצרים ואירועי חוץ בכיכר</li>
+            <li>אחר צהריים למשפחות ולילדים בכיכר</li>
           </ul>
         </div>
         <div class="vcol">
@@ -514,12 +621,14 @@ body::before{
         <div class="vcol">
           <h4>מה קורה בו אחרי ההשקה</h4>
           <ul class="plist">
-            <li>סדנאות, הרצאות עומק והכשרות</li>
+            <li>הכשרות מקצועיות ומסלולי תעסוקה</li>
+            <li>סדנאות והרצאות עומק</li>
             <li>קורסים ותוכניות רב מפגשיות</li>
             <li>עמדות עבודה: חלקן חינם לסטודנטים, חלקן בתשלום</li>
             <li>חדרי ישיבות להשכרה</li>
             <li>שוכרים קבועים: פרילנסרים, צוותים קטנים וחברות</li>
             <li>אירועי קהילה גדולים והאקתונים</li>
+            <li>תוכניות לנוער ולחיילים משוחררים</li>
             <li>הקרנות ואירועי חוץ עם המקרן הגדול</li>
           </ul>
         </div>
@@ -583,6 +692,11 @@ body::before{
         <div class="grow">
           <div class="lbl">האב, עמדות ושוכרים</div>
           <div class="bar b2" style="grid-column:6 / span 8">עמדות עבודה, חדרי ישיבות, שוכרים</div>
+        </div>
+        <div class="grow">
+          <div class="lbl">תעסוקה וחיבור למעסיקים</div>
+          <div class="bar b5" style="grid-column:3 / span 3">שולחן קריירה, מגייסים ראשונים</div>
+          <div class="bar b3" style="grid-column:6 / span 8">ערבי מעסיקים והכשרות מקצועיות</div>
         </div>
         <div class="grow">
           <div class="lbl">מועדון חברים והרשמה</div>
@@ -693,33 +807,154 @@ body::before{
 <section class="sec acc-green" id="revenue">
   <div class="wrap">
     <div class="eyebrow">הכנסות</div>
-    <h2 class="h2">מתי מתחיל להיכנס כסף</h2>
-    <p class="lead">ההכנסה לא מחכה לסוף. הקפה מכניס מהחודש הראשון, האירועים מצטרפים בחודש השלישי, וההאב הוא הקפיצה האמיתית מהחודש החמישי.</p>
+    <h2 class="h2">שני תרחישים, לא מספר אחד</h2>
+    <p class="lead">הקפה מכניס מהחודש הראשון, אבל מקום חדש בקריית שמונה לא מתמלא בחודש. לכן אני מציג טווח: תרחיש שמרני שאני מרגיש בנוח להתחייב אליו, ותרחיש אופטימי שתלוי כמעט כולו בשאלה אחת, האם ההאב מתמלא.</p>
 
+    <div class="vers">
+      <div class="vr now">
+        <span class="badge">שמרני · מה שסביר</span>
+        <h3>כ־65,000 ₪ בחודש 12</h3>
+        <p>מניח היענות איטית, 8 עד 15 משתתפים למפגש בחצי השנה הראשונה, והאב שמתמלא חלקית.</p>
+        <ul class="plist">
+          <li>קפה ובר: 40,000</li>
+          <li>מנויי עמדות עבודה: 10,000</li>
+          <li>שוכרים בהאב: 8,000</li>
+          <li>הכשרות וסדנאות: 4,000</li>
+          <li>חדרי ישיבות: 2,000</li>
+        </ul>
+      </div>
+      <div class="vr">
+        <span class="badge">אופטימי · מה שאפשרי</span>
+        <h3>כ־110,000 ₪ בחודש 12</h3>
+        <p>מניח שההאב מתמלא, שיש שוכר עוגן אחד לפחות, ושתוכניות העומק תופסות.</p>
+        <ul class="plist">
+          <li>קפה ובר: 55,000</li>
+          <li>שוכרים קבועים בהאב: 20,000</li>
+          <li>מנויי עמדות עבודה: 18,000</li>
+          <li>הכשרות וקורסים: 10,000</li>
+          <li>חדרי ישיבות: 4,000</li>
+          <li>חבילות לקהילות: 3,000</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="gains-title">קצב ההתפתחות, בשני התרחישים</h3>
     <div class="ramp">
-      <div class="rp"><div class="mo">חודש 1 עד 2</div><b>15 עד 25 אלף</b><span>קפה, אוכל קל ובר ערב</span></div>
-      <div class="rp"><div class="mo">חודש 3 עד 4</div><b>25 עד 40 אלף</b><span>נוספים ערבי בירה, הופעות ואירועי כיכר</span></div>
-      <div class="rp"><div class="mo">חודש 5 עד 6</div><b>40 עד 60 אלף</b><span>נוספות סדנאות בתשלום ועמדות עבודה בהאב</span></div>
-      <div class="rp"><div class="mo">חודש 7 עד 8</div><b>55 עד 75 אלף</b><span>נוספים חדרי ישיבות וחבילות לקהילות</span></div>
-      <div class="rp"><div class="mo">חודש 9 עד 10</div><b>65 עד 90 אלף</b><span>נוספים שוכרים קבועים בהאב</span></div>
-      <div class="rp"><div class="mo">חודש 11 עד 12</div><b>75 עד 110 אלף</b><span>נוספות הכשרות ותוכניות עומק</span></div>
+      <div class="rp"><div class="mo">חודש 1 עד 3</div><b>12 עד 28 אלף</b><span>קפה בלבד. המקום עדיין נבנה</span></div>
+      <div class="rp"><div class="mo">חודש 4 עד 6</div><b>20 עד 45 אלף</b><span>נוספים ערבי בירה, הופעות וסדנאות ראשונות</span></div>
+      <div class="rp"><div class="mo">חודש 7 עד 9</div><b>30 עד 80 אלף</b><span>ההאב מתחיל לייצר: עמדות, חדרים, תוכן</span></div>
+      <div class="rp" style="grid-column:span 3"><div class="mo">חודש 10 עד 12</div><b>45 עד 110 אלף</b><span>הקצה התחתון הוא התרחיש השמרני, העליון תלוי בשוכרים בהאב</span></div>
+    </div>
+
+    <h3 class="gains-title">כמה אנשים זה בפועל</h3>
+    <div class="grid3">
+      <div class="card">
+        <h4>הקפה</h4>
+        <p style="font-size:15px">כדי להגיע ל־55,000 ₪ צריך כ־<b style="color:var(--text)">100 עסקאות ביום</b>, שישה ימים בשבוע, בעסקה ממוצעת של כ־20 ₪.</p>
+      </div>
+      <div class="card">
+        <h4>למה התמהיל קריטי</h4>
+        <p style="font-size:15px">קפה ב־6 ₪ לחבר מכסה בערך את חומר הגלם. אם רוב העסקאות הן רק קפה, הממוצע צונח לכ־12 ₪ וצריך <b style="color:var(--text)">כפול אנשים</b>. ההנחה היא דלת כניסה, לא המוצר.</p>
+      </div>
+      <div class="card">
+        <h4>ההאב</h4>
+        <p style="font-size:15px">כ־<b style="color:var(--text)">25 מנויים משלמים</b> ועוד <b style="color:var(--text)">שישה עד שמונה שוכרים קבועים</b>. זה החלק שמזיז את המספר, יותר מכל שיפור בקפה.</p>
+      </div>
+    </div>
+
+    <h3 class="gains-title">התרחיש השמרני, לפי מחלקות, שנה ראשונה</h3>
+    <p style="font-size:15px;color:var(--muted);max-width:70ch;margin-bottom:18px">
+      הטבלה מניחה במכוון הנחות נמוכות: מעט אנשים בהתחלה, קפה זול לחברי קהילה, רוב התוכן חינם, וההאב שנפתח ומתמלא לאט. הסכומים הם ממוצע חודשי בכל רבעון.
+    </p>
+
+    <div class="tbl qtbl">
+      <div class="th"><div>מקור הכנסה</div><div>רבעון 1</div><div>רבעון 2</div><div>רבעון 3</div><div>רבעון 4</div><div>סה״כ שנה</div></div>
+
+      <div class="tr"><b>קפה, אוכל קל ויום</b><div class="num">12,000</div><div class="num">17,000</div><div class="num">20,000</div><div class="num">24,000</div><div class="num tot">219,000</div></div>
+      <div class="tr"><b>בר ערב ואירועי כיכר</b><div class="num">2,000</div><div class="num">5,000</div><div class="num">8,000</div><div class="num">12,000</div><div class="num tot">81,000</div></div>
+      <div class="tr"><b>מנויי עמדות עבודה בהאב</b><div class="num">0</div><div class="num">2,000</div><div class="num">5,000</div><div class="num">9,000</div><div class="num tot">48,000</div></div>
+      <div class="tr"><b>שוכרים קבועים בהאב</b><div class="num">0</div><div class="num">0</div><div class="num">3,000</div><div class="num">8,000</div><div class="num tot">33,000</div></div>
+      <div class="tr"><b>הכשרות, סדנאות וקורסים</b><div class="num">0</div><div class="num">1,500</div><div class="num">2,500</div><div class="num">4,000</div><div class="num tot">24,000</div></div>
+      <div class="tr"><b>חדרי ישיבות</b><div class="num">0</div><div class="num">500</div><div class="num">1,000</div><div class="num">1,800</div><div class="num tot">9,900</div></div>
+      <div class="tr"><b>חבילות לקהילות וארגונים</b><div class="num">0</div><div class="num">500</div><div class="num">800</div><div class="num">1,500</div><div class="num tot">8,400</div></div>
+
+      <div class="sum"><div>ממוצע חודשי ברבעון</div><div class="num">14,000</div><div class="num">26,500</div><div class="num">40,300</div><div class="num">60,300</div><div class="num tot">423,000</div></div>
     </div>
 
     <div class="grid3 mt-l">
       <div class="card">
-        <h4>מה מכניס מהיום הראשון</h4>
-        <ul class="plist"><li>קפה, שתייה ואוכל קל</li><li>בר ערב</li><li>אירועים פרטיים קטנים</li></ul>
+        <h4>ההנחות שמאחורי הטבלה</h4>
+        <ul class="plist">
+          <li>עסקה ממוצעת בקפה: כ־20 ₪, אחרי ההנחה לחברים</li>
+          <li>תנועה שגדלה מכ־35 עסקאות ביום לכ־70</li>
+          <li>8 עד 15 משתתפים למפגש בחצי השנה הראשונה</li>
+          <li>ההאב נפתח בחודש הרביעי, לא השלישי</li>
+        </ul>
       </div>
       <div class="card">
-        <h4>מה מצטרף תוך רבעון</h4>
-        <ul class="plist"><li>סדנאות והרצאות בתשלום</li><li>ערבי מוזיקה ובירה</li><li>חבילות ראשונות לקהילות</li></ul>
+        <h4>מה לא נכלל בכוונה</h4>
+        <ul class="plist">
+          <li>תקציבים ציבוריים</li>
+          <li>פילנתרופיה</li>
+          <li>שוכר עוגן גדול בהאב</li>
+          <li>אירועים גדולים או הפקות חיצוניות</li>
+        </ul>
       </div>
       <div class="card hot">
-        <h4>מה משנה את התמונה</h4>
-        <ul class="plist"><li>עמדות עבודה ומנויים</li><li>שוכרים קבועים בהאב</li><li>הכשרות ותוכניות עומק</li><li>תקציבים, שותפים ציבוריים ופילנתרופיה</li></ul>
+        <h4>למה זה עדיין מספיק</h4>
+        <p style="font-size:15px">גם בתרחיש הזה, חודש 12 מכניס פי ארבעה מחודש 1, ובלי אף אחד מהמנופים שכן סביר שיקרו. זו נקודת המוצא, לא התקרה.</p>
       </div>
     </div>
-    <p class="disclaim">הטווחים מבוססים על היקפי הפעילות המתוארים ועל הנחת תפוסה זהירה. לא הנחתי הכנסה מתקציבים ציבוריים או מפילנתרופיה, והם יכולים לשנות את התמונה לטובה.</p>
+
+    <p class="disclaim">לא הנחתי הכנסה מתקציבים ציבוריים או מפילנתרופיה. שוכר עוגן אחד בהאב, או תקציב אזורי אחד, משנים את התמונה יותר מכל שיפור תפעולי.</p>
+  </div>
+</section>
+
+<!-- ===== הפער ===== -->
+<section class="sec acc-cyan" id="gap">
+  <div class="wrap">
+    <div class="eyebrow">מה זה אומר בשורה התחתונה</div>
+    <h2 class="h2">השנה הראשונה היא השקעת הקמה</h2>
+    <p class="lead">אני מעדיף שתדעו את זה עכשיו ולא בחודש הרביעי. מקום כזה לא מכסה את עצמו בשנה הראשונה, ולא אמור.</p>
+
+    <div class="grid3">
+      <div class="card">
+        <h4>הכנסות שנה ראשונה</h4>
+        <p style="font-size:15px">מצטבר, לפי התרחישים: <b style="color:var(--text)">400,000 עד 670,000 ₪</b>.</p>
+      </div>
+      <div class="card">
+        <h4>הוצאות תפעול שנה ראשונה</h4>
+        <p style="font-size:15px">מעטפת מלאה כולל קפה והאב: <b style="color:var(--text)">1.05 עד 1.15 מיליון ₪</b>.</p>
+      </div>
+      <div class="card hot">
+        <h4>הפער שדורש מימון</h4>
+        <p style="font-size:15px"><b style="color:var(--text)">כ־400,000 עד 750,000 ₪</b> בשנה הראשונה, בנוסף להקמת ההאב.</p>
+      </div>
+    </div>
+
+    <div class="kicker">איזון תזרימי מגיע אי שם בין חודש 15 לחודש 20. השנה הראשונה בונה את המסה, השנייה מייצרת את ההכנסה.</div>
+
+    <div class="grid2 mt-l">
+      <div class="card">
+        <h4>מה מקטין את הפער</h4>
+        <ul class="plist">
+          <li>שוכר עוגן אחד בהאב, שלוקח שטח משמעותי</li>
+          <li>תקציב תעסוקה או הכשרה ממשרד העבודה, האשכול או העירייה</li>
+          <li>תקציב אזורי או לאומי אחד שנכנס בשנה הראשונה</li>
+          <li>פילנתרופיה שמזוהה עם המהלך של הבאת משפחות לעיר</li>
+          <li>תמהיל נכון בקפה: אוכל ובירה, לא רק קפה בהנחה</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>מה מגדיל אותו</h4>
+        <ul class="plist">
+          <li>איחור בפתיחת ההאב מעבר לחודש הרביעי</li>
+          <li>שיפוץ שמתגלה כיקר מהצפוי</li>
+          <li>קפה שמוכר רק קפה ולא אוכל</li>
+          <li>תוכן חינמי בלי מסלול ברור למוצר בתשלום</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
